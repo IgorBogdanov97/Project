@@ -1,0 +1,145 @@
+body { /*основной фон страницы*/
+	margin-top: 0;
+	background: #61a4ad;
+}
+
+a:link { /*не посещённая ссылка*/
+	color: #238623;
+	text-decoration: none;
+	background: transparent;
+	text-shadow: 1px 0px 1px black;
+}
+
+a:visited { /*посещённая ссылка*/
+	color: #0000e6;
+	text-decoration: none;
+	background: transparent;
+	text-shadow: 1px 0px 1px black;
+}
+
+a:hover { /*наводка курсора на ссылку*/
+	color: yellow;
+	background: transparent;
+	text-decoration: underline;
+	text-shadow: 1px 0px 1px black;
+}
+
+a:active { /*наводка кликом на ссылку*/
+	color: red;
+	background: transparent;
+	text-decoration: underline;
+	text-shadow: 1px 1px 2px black;
+}
+
+a:focus { /*наводка клавишами на ссылку*/
+	color: orange;
+	background: transparent;
+	text-decoration: underline;
+	text-shadow: 1px 1px 2px black;
+}
+
+::selection {
+	color: red;
+	background: yellow;
+}
+
+.notselection {
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;	
+}
+
+header.logo_type { /*логотип с фоном*/
+	padding: 10px;
+	color: #0000e6;
+	font-family: cursive;
+	background: #ffffff5b;
+	margin: 0 calc(-25vw + 25%);
+	text-shadow: 3px 3px 4px black;
+}
+
+nav.header { /*фиксация шапки*/
+	top: 0;	
+	z-index: 1;
+	opacity: 0.9;
+	position: sticky;
+}
+
+nav.header ul { /*шапка*/
+	padding: 0;
+	overflow: hidden;
+	background: #178282;
+	list-style-type: none;
+	margin: 0 calc(-25vw + 25%);
+}
+
+nav.header ul li { /*шапка, размеры окон шапки*/
+	float: left;
+	padding: 15px;
+	width: 14.62%;
+	text-align: center;
+	border-right: 1px solid #61a4ad;
+}
+  
+nav.header ul li a { /*шапка, ссылка*/
+	display: block;
+	font-size: 150%;
+	font-weight: bold;
+	font-family: cursive;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px black;
+}
+
+nav.header ul li:hover { /*шапка, наводка на ссылку*/
+	background: #1aa1a1;
+}
+
+input.matetial_learn_1  { /*стиль кнопки "Материал обучения"*/
+	background: #1aa1a1;
+	border: 2px solid black;
+}
+
+input:hover.matetial_learn_1 { /*наводка курсора на кнопку "Материал обучения"*/
+	background: #50b4b4;
+}
+
+input.matetial_learn_2 { /*стиль кнопки "Закрыть эту страницу"*/
+	background: #d8564d;
+	border: 2px solid black;
+}
+
+input:hover.matetial_learn_2 { /*наводка курсора на кнопку "Закрыть эту страницу"*/
+	background: red; 
+}
+
+table.table_1, table.table_1 td { /*объединённые чёрные границы таблицы*/
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table.table_1 caption { /*Заголовок таблицы*/
+	color: white;
+	font-weight: bold;
+	font-style: oblique;
+	text-shadow: 1px 1px 2px black;
+}
+
+table.table_1 { /*расположение таблицы*/
+	width: 31%; 
+	margin: auto;
+}
+
+table.table_1 td { /*Высота строчек в таблице*/
+	padding: 10px; 
+	font-style: oblique;
+}
+
+table.table_1 tr:nth-child(even) {  /*Белые полоски на таблице*/
+	background: #b3cccc; 
+}
+
+table.table_1 tr:hover { /*наводка курсора на таблицу (подсветка фона)*/	
+	background: #1aa1a1cb;
+}

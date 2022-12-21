@@ -1,0 +1,261 @@
+body {
+	margin-top: 0;
+	background: #61a4ad;
+}
+
+video {
+	margin: auto;
+	width: 500px;
+	height: 400px;
+	display: block;
+	outline: #178282 solid 4px;
+}
+
+address {
+	color: white;
+	font-weight: bold;
+	text-align: center;	
+	text-shadow: 1px 1px 2px black;
+}
+
+figure, .center {
+	text-align: center;
+}
+
+.text_w_shadow_b {
+	color: white;
+	text-shadow: 1px 1px 2px black;
+}
+
+.text_b_shadow_w {
+	color: black;
+	text-shadow: 1px 1px 2px white;
+}
+
+img#main_photo {
+	z-index: -1;
+	opacity: 0.0;
+	width: 400px;
+	height: 500px;
+	border-radius: 5%;
+	outline: #178282 solid 4px;
+}
+
+img.image_Jim_Carrey {
+	width: 400px;
+	height: 200px;
+	border-radius: 5%;
+	outline: #178282 solid 4px;
+}
+
+img.gadgetsandcoffee {
+	width: 400px;
+	height: 380px;
+	border-radius: 5%;
+	outline: #178282 solid 4px;
+}
+
+img.Markul {
+	width: 400px;
+	height: 400px;
+	margin-bottom: 10px;
+	outline: #178282 solid 4px;
+}
+
+p.mem_text {
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px 2px black;
+}
+
+span.smile_size {
+	font-size: 30px;
+}
+
+blockquote {
+	color:white;
+	margin-left: 450px;
+	text-shadow: 1px 1px 2px black;
+}
+
+a:link {
+	color: #238623;
+	text-decoration: none;
+	background: transparent;
+	text-shadow: 1px 0px 1px black;
+}
+
+a:visited {
+	color: #0000e6;
+	text-decoration: none;
+	background: transparent;
+	text-shadow: 1px 0px 1px black;
+}
+
+a:hover {
+	color: yellow;
+	background: transparent;
+	text-decoration: underline;
+	text-shadow: 1px 0px 1px black;
+}
+
+a:active {
+	color: red;
+	background: transparent;
+	text-decoration: underline;
+	text-shadow: 1px 1px 2px black;
+}
+
+a:focus {
+	color: orange;
+	background: transparent;
+	text-decoration: underline;
+	text-shadow: 1px 1px 2px black;
+}
+
+::selection {
+	color: red;
+	background: yellow;
+}
+
+.notselection {
+	user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;	
+}
+
+.logo_type {
+	padding: 10px;
+	color: #0000e6;
+	text-align: center;
+	font-family: cursive;
+	background: #ffffff5b;
+	margin: 0 calc(-25vw + 25%);
+	text-shadow: 3px 3px 4px black;
+}
+
+nav { /* задаем цвет фона для контейнера nav. */
+	top: 0;	
+	z-index: 1;
+	opacity: 0.9;
+	position: sticky;
+	background-color: #178282;
+	margin: 0 calc(-25vw + 25%);
+}
+
+nav ul { /* убираем отступы и поля, а также list-style для "ul", и добавляем "position:relative" */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ul li { /* применяем inline-block позиционирование к элементам навигации */
+	width: 14.06%;
+	display: inline-block;
+	background-color: #178282;
+}
+
+nav a { /* стилизуем ссылки */
+	display: block;
+	padding: 0 10px;
+	line-height: 60px;
+	font-size: 150%;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px black;
+}
+
+nav a:hover { /* изменяем цвет фона при наведении курсора */
+	background-color: #1aa1a1;
+}
+
+nav ul ul { /* скрываем выпадающие списки по умолчанию и задаем абсолютное позиционирование */
+	display: none;
+	position: absolute;
+}
+
+nav ul li:hover > ul { /* отображаем выпадающий список при наведении */
+	display: inherit;
+}
+
+nav ul ul li { /* первый уровень выпадающего списка */
+	min-width: 215px;
+	display: list-item;
+}
+
+input.matetial_learn_1  {
+	background: #1aa1a1;
+	border: 2px solid black;
+}
+
+input:hover.matetial_learn_1 {
+	background: #50b4b4;
+}
+
+input.matetial_learn_2 { 
+	background: #d8564d;
+	border: 2px solid black;
+}
+
+input:hover.matetial_learn_2 {
+	background: red; 
+}
+
+table.table_1, table.table_1 th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table.table_1 caption {
+	color: white;
+	font-weight: bold;
+	font-style: oblique;
+	text-shadow: 1px 1px 2px black;
+}
+
+table.table_1 {
+	width: 31%; 
+	margin: auto;
+	font-size: 105%;
+	font-style: oblique;
+	text-shadow: 1px 1px 8px white;
+}
+
+table.table_1 col:nth-child(1) {
+	background:#178282;
+}
+table.table_1 col:nth-child(2) {
+	background:#50b4b4
+}
+
+table.table_1 td:nth-child(1) {
+	font-weight: bold;
+}
+
+table.table_1 td, th {
+	padding: 10px; 
+}
+
+table.table_1 th {
+	text-align: left;
+}
+
+table.table_1 tr:nth-child(even) {
+	background: #b3cccc; 
+}
+
+table.table_1 tr:hover {	
+	background: #1aa1a1cb;
+}
+
+table.table_1 tr th:nth-child(2), td:nth-child(2) {
+	color: navy;
+}
+
+footer {
+	text-align: center;
+	font-style: italic;
+}

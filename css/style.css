@@ -168,10 +168,6 @@ nav a { /* стилизуем ссылки */
 	text-shadow: 1px 1px 2px black;
 }
 
-nav a:hover { /* изменяем цвет фона при наведении курсора */
-	background-color: #1aa1a1;
-}
-
 nav ul ul { /* скрываем выпадающие списки по умолчанию и задаем абсолютное позиционирование */
 	display: none;
 	position: absolute;
@@ -186,22 +182,14 @@ nav ul ul li { /* первый уровень выпадающего списк�
 	display: list-item;
 }
 
-input.matetial_learn_1  {
+input#matetial_learn_1, input#matetial_learn_2  {
 	background: #1aa1a1;
 	border: 2px solid black;
 }
 
-input:hover.matetial_learn_1 {
-	background: #50b4b4;
-}
-
-input.matetial_learn_2 { 
-	background: #d8564d;
-	border: 2px solid black;
-}
-
-input:hover.matetial_learn_2 {
-	background: red; 
+input#button_topic {
+	color: black;
+	background: white;
 }
 
 table.table_1, table.table_1 th, td {
@@ -243,12 +231,20 @@ table.table_1 th {
 	text-align: left;
 }
 
-table.table_1 tr:nth-child(even) {
+table.table_1_1 tr:nth-child(even) {
 	background: #b3cccc; 
 }
 
-table.table_1 tr:hover {	
+table.table_1_2 tr:nth-child(even) {
+	background: rgba(255, 255, 255, 0.421); 
+}
+
+table.hover_1 tr:hover {	
 	background: #1aa1a1cb;
+}
+
+table.hover_2 tr:hover {	
+	background: white;
 }
 
 table.table_1 tr th:nth-child(2), td:nth-child(2) {

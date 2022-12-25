@@ -94,16 +94,3 @@
 #music_volume, #music_playbackrate {
     color: lime;
 }
-
-.music_select:hover, 
-#music_nexttrack:hover, 
-#music_previoustrack:hover,
-.music_volume:hover,
-#music_pause:hover, 
-.music_volume:hover, 
-#music_currenttime:hover, 
-.music_currenttime:hover,
-.music_playbackrate:hover {
-    border: 2px solid white;
-    background-color: #61a4ad;
-}

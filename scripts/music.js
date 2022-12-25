@@ -51,7 +51,7 @@ let music_OnRandom = false;
 let music_Id = Music_RandomTreck();
 let music_OldId = 0;
 let music_Play = true;
-let music_Muted = false; // hello world
+let music_Muted = true;
 let music_Volume = 1;
 let music_PlayBackRate = 1;
 let music_SelectTime = null;
@@ -64,18 +64,21 @@ let Music_ExecutorHref = new Map([
 ]);
 
 function Music_Treck() {
-    let muted = music_Muted == true ? "muted" : "";
-    let autoplay = music_Play == true ? "autoplay" : "";
+    let message = "";
+    let muted = music_Muted == true ? 
+        "muted" : "";
+    let autoplay = music_Play == true ? 
+        "autoplay" : "";
     let music_Player = document.getElementById("music_player");
     let music_Message = document.getElementById("music_message");
     let music_Number = document.getElementById("music_number");
-
-    let message = "";
     let ExecutorOne = Music_Executor(music_Id);
-    let Feat = Music_IsExecutor(music_Id) == -1 ? "" : " feat. ";
-    let Executor = Music_IsExecutor(music_Id) == -1 ? "Исполнитель " : "Исполнители ";
+    let Feat = Music_IsExecutor(music_Id) == -1 ?
+        "" : " feat. ";
+    let Executor = Music_IsExecutor(music_Id) == -1 ? 
+        "Исполнитель " : "Исполнители ";
 
-    music_Player.src=`\\Project\\music\\${Music_FileName[music_Id]}.mp3`;
+    music_Player.src=`\\music\\${Music_FileName[music_Id]}.mp3`;
     music_Player.autoplay = autoplay;
     music_Player.muted = muted;
     music_Player.playbackRate = music_PlayBackRate;
@@ -99,6 +102,7 @@ function Music_Treck() {
         <a href="${Music_Download[music_Id]}" title="Ссылка на трек &#8220;${MusicName(music_Id)}&#8220; ${Music_Year(music_Id)}" target="_blank">
             <cite>"${MusicName(music_Id)}" ${Music_Year(music_Id)}</cite>
         </a>.`;
+
     return;
 }
 
@@ -147,13 +151,10 @@ function Music_PauseTrack() {
     let music_Pause = document.getElementById("music_pause");
 
     if (music_Player.paused == false) {
-        music_Pause.value = "Старт";
-        music_Pause.style.color = "lime";
+        music_Pause.style = "value:Старт;color:lime;";
         music_Player.pause();
-    }
-    else {
-        music_Pause.value = "Пауза";
-        music_Pause.style.color = "red";
+    } else {
+        music_Pause.style = "value:Пауза;color:red;";
         music_Player.play();
     }
     music_Play = !music_Play;
@@ -168,9 +169,11 @@ function Music_NextTrack(value) {
     } else {
         music_OldId = music_Id;
         if(value < 0) {
-            music_Id = music_Id - 1 < 1 ? music_Max : --music_Id;
+            music_Id = music_Id - 1 < 1 ?
+                music_Max : --music_Id;
         } else {
-            music_Id = music_Id + 1 > music_Max ? 1 : ++music_Id;
+            music_Id = music_Id + 1 > music_Max ? 
+                1 : ++music_Id;
         }
     }
     Music_Treck();
@@ -203,18 +206,16 @@ function Music_RandomTreck() {
 }
 
 function Music_RandomTrack() {
-    let music_Previoustrack = document.getElementById("music_previoustrack");
-    let music_Number = document.getElementById("music_number");
     music_OnRandom = !music_OnRandom;
-
+    let music_Previoustrack = document.getElementById("music_previoustrack");
     if (music_OnRandom == true) {
-        music_Previoustrack.style.background = "#178282";
+        music_Previoustrack.style.background = TopStatus == false ? "#178282" : "black";
         music_Id = Music_IsRandom();
         Music_Treck();
         
     } else {
-        music_Number.innerText = `( ${(music_Id)}/${music_Max} )`;
-        music_Previoustrack.style.background = "#96acac";
+        document.getElementById("music_number").innerText = `( ${(music_Id)}/${music_Max} )`;
+        music_Previoustrack.style.background = TopStatus == false ? "#96acac" : "#383838";
         Music_LoadTracks();
     }
     Music_ListResetColors();
@@ -225,15 +226,26 @@ function Music_RandomTrack() {
 function Music_ListCreate() {
     let music_List = document.getElementById("music_list");
     let message = "";
-
     for (let i = 1; i <= music_Max; i++) {
         if (i == music_Id) {
-            message += `<option style="background:lime;" value="${i}" selected>${i}. ${Music_FileName[i]} </option>`;
+            if(TopStatus == false) {
+                message += `<option id=music_list_${i} style="background:lime;" value="${i}" selected>${i}. ${Music_FileName[i]} </option>`;
+            } else {
+                message += `<option id=music_list_${i} style="background:white;" value="${i}" selected>${i}. ${Music_FileName[i]} </option>`;
+            }
         }
         else if (randomMusic_FileName.indexOf(Music_FileName[i]) == -1) {
-            message += `<option style="background:red" value="${i}" >${i}. ${Music_FileName[i]} </option>`;
+            if(TopStatus == false) {
+                message += `<option id=music_list_${i} style="background:red" value="${i}" >${i}. ${Music_FileName[i]} </option>`;
+            } else {
+                message += `<option id=music_list_${i} style="background:#383838" value="${i}" >${i}. ${Music_FileName[i]} </option>`;
+            }
         } else {
-            message += `<option style="background:#b3cccc;" value="${i}">${i}. ${Music_FileName[i]} </option>`;
+            if(TopStatus == false) {
+                message += `<option id=music_list_${i} style="background:#b3cccc;" value="${i}">${i}. ${Music_FileName[i]} </option>`;
+            } else {
+                message += `<option id=music_list_${i} style="background:grey;" value="${i}">${i}. ${Music_FileName[i]} </option>`;
+            }
         }
     }
     music_List.innerHTML = message;
@@ -243,10 +255,22 @@ function Music_ListCreate() {
 function Music_ListSelectColor() {
     let music_List = document.getElementById("music_list");
     music_List.options[music_Id-1].selected = true;
-    music_List.options[music_Id-1].style.background = "lime";
+    music_List.options[music_Id-1].style.background = TopStatus == false ? "lime" : "white";
 
     if(music_OldId > 0) {
-        music_List.options[music_OldId-1].style.background = music_OnRandom == true ? "red" : "#b3cccc";
+        if(TopStatus == false) {
+            if(music_OnRandom == true) {
+                music_List.options[music_OldId-1].style.background = "red";
+            } else {
+                music_List.options[music_OldId-1].style.background = "#b3cccc";
+            }
+        } else {
+            if(music_OnRandom == true) {
+                music_List.options[music_OldId-1].style.background = "#383838";
+            } else {
+                music_List.options[music_OldId-1].style.background = "grey";
+            }
+        }
     }
     return;
 }
@@ -262,7 +286,7 @@ function Music_ListResetColors() {
     music_OldId = 0;
     let music_List = document.getElementById("music_list");
     for (let i = 1; i <= music_Max; i++) {
-        music_List.options[i-1].style.background = "#b3cccc";
+        music_List.options[i-1].style.background = TopStatus == false ? "#b3cccc" : "grey";
     }
     return;
 }
@@ -270,9 +294,10 @@ function Music_ListResetColors() {
 function Music_Select() {
     if (music_OnRandom == true) return Music_ListSetSelection();
     let music_List = document.getElementById("music_list");
-    let music_Select = music_List.options[music_List.selectedIndex].value;
+    let music_Select = +music_List.options[music_List.selectedIndex].value;
+    if(music_Id == music_Select) return true;
     music_OldId = music_Id;
-    music_Id = +music_Select;
+    music_Id = music_Select;
     music_SelectTime = null;
     Music_Treck();
     Music_ListSelectColor();
@@ -301,26 +326,23 @@ function Music_CurrentTime(value) {
 }
 
 function Music_ConvertTime(time) {
-    if (Math.ceil(time - 1) < 1) { //  меньше 1 секунды
-        return `00:00`;
-    } 
-    else if (Math.ceil(time - 1) < 10) { // меньше 10 секунд
-        return `00:0${Math.ceil(time - 1)}`;
-    }
-    else if (Math.ceil(time - 1) < 60) { // меньше 1 минуты
-        return `00:${Math.ceil(time - 1)}`;
-    }
-    else if (Math.ceil(time - 1) < 600) { // меньше 10 минут
-        if (Math.ceil(time % 60 - 1) < 10) { // меньше 10 минут, и 10 секунд
-            return `0${Math.ceil(time / 60 - 1)}:0${Math.ceil(time % 60 - 1)}`;
-        } else { // меньше 10 минут, больше 9 секунд
-            return `0${Math.ceil(time / 60 - 1)}:${Math.ceil(time % 60 - 1)}`;
+    let seconds = Math.ceil(time - 1);
+    let minutes = Math.ceil(time / 60 - 1);
+    let ext_seconds = Math.ceil(time % 60 - 1);
+    if (seconds < 1) return `00:00`; //  меньше 1с
+    else if (seconds < 10) return `00:0${seconds}`;  // меньше 10с
+    else if (seconds < 60) return `00:${seconds}`; // меньше 1м
+    else if (seconds < 600) { // меньше 10м
+        if (ext_seconds < 10) { // меньше 10м, и 10с
+            return `0${minutes}:0${ext_seconds}`;
+        } else { // меньше 10м, больше 9с
+            return `0${minutes}:${ext_seconds}`;
         }
     }
-    else if (Math.ceil(time % 60 - 1) < 10) { // больше 10 минут, меньше 10 секунд
-        return `${Math.ceil(time / 60 - 1)}:0${Math.ceil(time % 60 - 1)}`;
-    }// больше 10 минут, больше 9 секунд
-    else return `${Math.ceil(time / 60 - 1)}:${Math.ceil(time % 60 - 1)}`;
+    else if (ext_seconds < 10) { // больше 10м, меньше 10с
+        return `${minutes}:0${ext_seconds}`;
+    }// больше 10м, больше 9с
+    else return `${minutes}:${ext_seconds}`;
 }
 
 setInterval(Music_AudioStatus, 500);

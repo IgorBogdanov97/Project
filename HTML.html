@@ -4,49 +4,45 @@
 		<title>BIM-Technology</title>
 		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.">
 		<link rel="icon" href="favicon-logo.ico">
-		<link rel="stylesheet" href="/Project/css/style.css">
-		<link rel="stylesheet" href="/Project/css/music.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/music.css">
 		<base href="HTML.html" target="_blank">
-		<script src="/Project/scripts/script.js"></script>
-		<script src="/Project/scripts/music.js"></script>
+		<script src="/scripts/script.js"></script>
+		<script src="/scripts/music.js"></script>
 	</head>
 	<body>
-		<div id="ShowTop" style="display: none;">
-			<button type="button" onclick="SelectTopic(false)">Light</button>
-			<button type="button" onclick="SelectTopic(true)">Night</button>
-		</div>
-		<header class="logo_type" id="UP" onclick="ShowTopic()">
-			<h1 title="Кликните по шапке, чтобы сменить фон"><span id="logo_1">B</span><span id="logo_2">I</span><span id="logo_3">M</span><span id="logo_4">-</span><span id="logo_5">T</span><span id="logo_6">e</span><span id="logo_7">c</span><span id="logo_8">h</span><span id="logo_9">n</span><span id="logo_10">o</span><span id="logo_11">l</span><span id="logo_12">o</span><span id="logo_13">g</span><span id="logo_14">y</span></h1>
+		<header class="logo_type" id="UP">
+			<h1 title="Bogdanov Igor Mikhaylovich"><span id="logo_1">B</span><span id="logo_2">I</span><span id="logo_3">M</span><span id="logo_4">-</span><span id="logo_5">T</span><span id="logo_6">e</span><span id="logo_7">c</span><span id="logo_8">h</span><span id="logo_9">n</span><span id="logo_10">o</span><span id="logo_11">l</span><span id="logo_12">o</span><span id="logo_13">g</span><span id="logo_14">y</span></h1>
 		</header>
 		<nav>
-			<ul>
-				<li><a id="header_1" href="HTML.html" title="Главная страница">Главная</a></li>
-				<li><a id="header_2" href="HTML.html" title="Контакты">Контакты</a>
+			<ul id="navid_1">
+				<li id="navid_2" onmouseover="onmousebutton_navid(2, true)" onmouseout="onmousebutton_navid(2,false)"><a id="header_1" href="HTML.html" title="Главная страница">Главная</a></li>
+				<li id="navid_3" onmouseover="onmousebutton_navid(3, true)" onmouseout="onmousebutton_navid(3,false)"><a id="header_2" title="Контакты">Контакты</a>
 					<ul>
-						<li><a href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov">ВКонтакте</a></li>
-						<li><a href="https://www.instagram.com/igor______bogdanov/" title="https://www.instagram.com/igor______bogdanov/">Instagram</a></li>
-						<li><a href="https://e.mail.ru/compose/" title="igorbogdanov97@mail.ru">Mail</a></li>
-						<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsTMDgrQKqdwQkrZwqFzvWQGwZCqFVzjNXzhCLSqMcTvDSvXhJbTcghbbFLFCXWkmrMbcdLl" title="igorbogdanov228@gmail.com">Gmail</a></li>
-						<li><a href="https://join.skype.com/invite/mWhlfEEjHiYO" title="justin22819">Skype</a></li>
+						<li id="navid_4" onmouseover="onmousebutton_navid(4, true)" onmouseout="onmousebutton_navid(4,false)"><a href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov">ВКонтакте</a></li>
+						<li id="navid_5" onmouseover="onmousebutton_navid(5, true)" onmouseout="onmousebutton_navid(5,false)"><a href="https://www.instagram.com/igor______bogdanov/" title="https://www.instagram.com/igor______bogdanov/">Instagram</a></li>
+						<li id="navid_6" onmouseover="onmousebutton_navid(6, true)" onmouseout="onmousebutton_navid(6,false)"><a href="https://e.mail.ru/compose/" title="igorbogdanov97@mail.ru">Mail</a></li>
+						<li id="navid_7" onmouseover="onmousebutton_navid(7, true)" onmouseout="onmousebutton_navid(7,false)"><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsTMDgrQKqdwQkrZwqFzvWQGwZCqFVzjNXzhCLSqMcTvDSvXhJbTcghbbFLFCXWkmrMbcdLl" title="igorbogdanov228@gmail.com">Gmail</a></li>
+						<li id="navid_8" onmouseover="onmousebutton_navid(8, true)" onmouseout="onmousebutton_navid(8,false)"><a href="https://join.skype.com/invite/mWhlfEEjHiYO" title="justin22819">Skype</a></li>
 					</ul>
 				</li>
-				<li><a id="header_3" href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov">ВКонтакте</a></li>
-				<li><a id="header_4" href="https://www.instagram.com/igor______bogdanov/" title="https://www.instagram.com/igor______bogdanov/">Instagram</a></li>
-				<li><a id="header_5" href="https://e.mail.ru/compose/" title="igorbogdanov97@mail.ru">Mail</a></li>
-				<li><a id="header_6" href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsTMDgrQKqdwQkrZwqFzvWQGwZCqFVzjNXzhCLSqMcTvDSvXhJbTcghbbFLFCXWkmrMbcdLl" title="igorbogdanov228@gmail.com">Gmail</a></li>
-				<li><a id="header_7" href="https://join.skype.com/invite/mWhlfEEjHiYO" title="justin22819">Skype</a></li>
+				<li id="navid_9" ><a id="header_3" onmouseover="onmousebutton_navid(9, true)" onmouseout="onmousebutton_navid(9,false)" href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov">ВКонтакте</a></li>
+				<li id="navid_10"><a id="header_4" onmouseover="onmousebutton_navid(10, true)" onmouseout="onmousebutton_navid(10,false)" href="https://www.instagram.com/igor______bogdanov/" title="https://www.instagram.com/igor______bogdanov/">Instagram</a></li>
+				<li id="navid_11"><a id="header_5" onmouseover="onmousebutton_navid(11, true)" onmouseout="onmousebutton_navid(11,false)" href="https://e.mail.ru/compose/" title="igorbogdanov97@mail.ru">Mail</a></li>
+				<li id="navid_12"><a id="header_6" onmouseover="onmousebutton_navid(12, true)" onmouseout="onmousebutton_navid(12,false)" href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsTMDgrQKqdwQkrZwqFzvWQGwZCqFVzjNXzhCLSqMcTvDSvXhJbTcghbbFLFCXWkmrMbcdLl" title="igorbogdanov228@gmail.com">Gmail</a></li>
+				<li id="navid_13"><a id="header_7" onmouseover="onmousebutton_navid(13, true)" onmouseout="onmousebutton_navid(13,false)" href="https://join.skype.com/invite/mWhlfEEjHiYO" title="justin22819">Skype</a></li>
 			</ul>
 		</nav>
 		<figure>
-			<a href="https://vk.com/igor___bogdanov" title="Богданов Игорь Михайлович" target="_blank"><img id="main_photo" src="/Project/images/Igor_Bogdanov.jpg" alt="Богданов Игорь Михайлович"></a>
+			<a href="https://vk.com/igor___bogdanov" title="Богданов Игорь Михайлович" target="_blank"><img id="main_photo" src="/images/Igor_Bogdanov.jpg" alt="Богданов Игорь Михайлович"></a>
 			<br>
 			<figcaption><a href="https://vk.com/igor___bogdanov" title="Богданов Игорь Михайлович" target="_blank"><i>Богданов Игорь Михайлович</i></a></figcaption>
 		</figure>
-		<table class="table_1">
+		<table id="table_1" class="table_1 table_1_1 hover_1">
 			<caption>Анкета</caption>
 			<colgroup>
-				<col span="1">
-				<col span="1">
+				<col id="table_1_cool_1" span="1">
+				<col id="table_1_cool_2" span="1">
 			</colgroup>
 			<tr><th title="Наименование">Наименование: </th><th>Описание:</th></tr>
 			<tr><td title="Имя пользователя">Имя: </td><td>Игорь</td></tr>
@@ -76,7 +72,7 @@
 		</table>
 		<p class="mem_text">Когда хочешь ускорить процесс обучения программирования:) <span class="smile_size">😂</span></p>
 		<figure>
-			<img class="image_Jim_Carrey" src="/Project/images/Jim_Carrey.gif" alt="Актёр Джим Керри" title="Актёр Джим Керри">
+			<img id="image_Jim_Carrey" class="image_Jim_Carrey" src="/images/Jim_Carrey.gif" alt="Актёр Джим Керри" title="Актёр Джим Керри">
 			<figcaption class="text_w_shadow_b">Актёр 
 				<a href="https://ru.wikipedia.org/wiki/Керри_Джим" title="Ссылка на биографию Джима Керри" target="_blank"><i>Джим Керри</i></a>, фрагмент из фильма
 				<a href="https://kinogo-film.xyz/komediya/1843-bryus-vsemoguschiy.html" title="Ссылка на фильм &#8220;Брюс Всемогущий&#8220; (2003)" target="_blank"><cite>"Брюс Всемогущий" (2003)</cite></a>.
@@ -84,7 +80,7 @@
 		</figure>
 		<p class="text_w_shadow_b center"><dfn class="text_b_shadow_w">Карта изображения</dfn> — это изображение с кликабельными областями.</p>
 		<figure>
-			<img class="gadgetsandcoffee" src="/Project/images/gadgets_and_coffee.jpg" alt="Гаджеты и кофе" title="Гаджеты и кофе" usemap="#gadgets_and_coffee">
+			<img id="gadget_sand_coffee" class="gadgetsandcoffee" src="/images/gadgets_and_coffee.jpg" alt="Гаджеты и кофе" title="Гаджеты и кофе" usemap="#gadgets_and_coffee">
 			<map name="gadgets_and_coffee">
 				<area shape="rect" coords="33,43,274,348" alt="Ноутбук" title="Ноутбук — переносной компьютер, в корпусе которого объединены типичные компоненты ПК, включая дисплей, клавиатуру и устройство указания, а также аккумуляторные батареи. Ноутбуки отличаются небольшими размерами и весом, время автономной работы ноутбуков варьируется в пределах от 2 до 15 часов." onclick="OpenLink(0)">
 				<area shape="rect" coords="290,172,335,243" alt="Смартфон" title="Смартфо́н — мобильный телефон, дополненный функциональностью карманного персонального компьютера. Также коммуникатор — карманный персональный компьютер, дополненный функциональностью мобильного телефона." onclick="OpenLink(1)">
@@ -104,16 +100,16 @@
 			<br>
 			аудиовизуальное произведение, записанное на физическом носителе.
 		</blockquote>
-		<video src="/Project/video/GameExtream-RPG [RUS].mp4" title="Видеообзор SAMP сервера, проекта GameExtream-RPG" poster="images/screensaver_video_gameextream.jpg" controls></video>
+		<video id="video_gameextream" src="/video/GameExtream-RPG [RUS].mp4" title="Видеообзор SAMP сервера, проекта GameExtream-RPG" poster="images/screensaver_video_gameextream.jpg" controls></video>
 		<p class="text_w_shadow_b center">Видеообзор SAMP сервера, проекта <a href="https://vk.com/gameextream" title="Ссылка на группу vk.com GameExtream-RPG" target="_blank"><cite>GameExtream-RPG</cite></a>.</cite></p>
 		<p class="text_b_shadow_w center">Аудио <span class="text_w_shadow_b">— это общий термин, относящийся к звуковым технологиям.</span></p>
 		<figure>
-			<a href="https://ru.wikipedia.org/wiki/Markul" title="Markul" target="_blank"><img class="Markul" src="/Project/images/Markul - Sense of Human.jpg" alt="Markul"></a>
+			<a href="https://ru.wikipedia.org/wiki/Markul" title="Markul" target="_blank"><img id="image_Markul" class="Markul" src="/images/Markul - Sense of Human.jpg" alt="Markul"></a>
 			<figcaption class="text_w_shadow_b">
 				Исполнитель <a href="https://ru.wikipedia.org/wiki/Markul" title="Markul" target="_blank"><i>Markul</i></a> - обложка музыкального альбома  <a href="https://sound-fun.online/album/142458/" title="Ссылка на альбом &#8220;Sense of Human&#8220; (2021)" target="_blank"><cite>"Sense of Human" (2021)</cite></a>.
 			</figcaption>
 		</figure>
-		<div class="music-panel notselection">
+		<div id="music-panel" class="music-panel notselection">
 			<audio id="music_player" type="audio/wav"></audio>
 			<div class="text_w_shadow_b music-player-text">Проигрыватель
 				<progress id="music_progress"></progress>
@@ -123,24 +119,24 @@
 					<form class="music_text_center">
 						<label class="text_w_shadow_b">Список:</label>
 						<select id="music_list"></select>
-						<input class="music_select text_w_shadow_b" type="button" value="Выбрать" onClick="Music_Select()">
+						<input id="music_select" class="music_select text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_select', true)" onmouseout="onmousebutton_music('music_select',false)" value="Выбрать" onClick="Music_Select()">
 					</form>
 					<div class="music_nexttrack_section">
-						<input id="music_previoustrack" class="text_w_shadow_b" type="button" onclick="Music_NextTrack(-1)" value="Предыдущий">
-						<input id="music_pause" type="button" onclick="Music_PauseTrack()" value="Пауза">
-						<input id="music_nexttrack" class="text_w_shadow_b" type="button" onclick="Music_NextTrack(+1)" value="Следующий">
-						<img id="music_random" src="/Project/images/music_random_image.png" onclick="Music_RandomTrack()" title="Случайный трек">
+						<input id="music_previoustrack" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_previoustrack', true)" onmouseout="onmousebutton_music('music_previoustrack',false)" onclick="Music_NextTrack(-1)" value="Предыдущий">
+						<input id="music_pause" type="button" onmouseover="onmousebutton_music('music_pause', true)" onmouseout="onmousebutton_music('music_pause',false)" onclick="Music_PauseTrack()" value="Пауза">
+						<input id="music_nexttrack" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_nexttrack', true)" onmouseout="onmousebutton_music('music_nexttrack', false)" onclick="Music_NextTrack(+1)" value="Следующий">
+						<img id="music_random" src="/images/music_random_image.png" onclick="Music_RandomTrack()" title="Случайный трек">
 					</div>	
 					<div class="music_section_volume">
-						<input class="text_w_shadow_b music_volume" type="button" onclick="Music_Volume(-1)" value="-">
-						<button class="music_volume" type="button" onclick="Music_Volume(0)"><span class="text_w_shadow_b">Звук: <span id="music_volume">100</span></span></button>
-						<input class="text_w_shadow_b music_volume" type="button" onclick="Music_Volume(1)" value="+">
+						<input id="music_minus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_minus', true)" onmouseout="onmousebutton_music('music_minus', false)" onclick="Music_Volume(-1)" value="-">
+						<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Volume(0)"><span class="text_w_shadow_b"><span>Звук: <span id="music_volume">100</span></span></button>
+						<input id="music_plus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_plus', true)" onmouseout="onmousebutton_music('music_plus', false)" onclick="Music_Volume(1)" value="+">
 					</div>
-					<input class="text_w_shadow_b music_currenttime" type="button" onclick="Music_CurrentTime(false)" value="-5 секунд">
-					<input class="text_w_shadow_b music_playbackrate" type="button" onclick="Music_PlayBackRate(false)" value="-">
+					<input id="music_currenttime_-5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_-5second', true)" onmouseout="onmousebutton_music('music_currenttime_-5second', false)" onclick="Music_CurrentTime(false)" value="-5 секунд">
+					<input id="music_playbackrate-" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate-', true)" onmouseout="onmousebutton_music('music_playbackrate-', false)" onclick="Music_PlayBackRate(false)" value="-">
 					<span class="text_w_shadow_b">Ускорение: <span id="music_playbackrate">1.0</span></span> 
-					<input class="text_w_shadow_b music_playbackrate" type="button" onclick="Music_PlayBackRate(true)" value="+">
-					<input class="text_w_shadow_b music_currenttime" type="button" onclick="Music_CurrentTime(true)" value="+5 секунд">
+					<input id="music_playbackrate+" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate+', true)" onmouseout="onmousebutton_music('music_playbackrate+', false)" onclick="Music_PlayBackRate(true)" value="+">
+					<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(true)" value="+5 секунд">
 				</div>
 			</div>	
 			<script>
@@ -152,12 +148,13 @@
 		<address>Разработчик сайта: <a href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov" target="_blank">Богданов Игорь Михайлович</a></address>
 		<br>
 		<div class="center">
-			<input class="matetial_learn_1" type="button" value="Материал обучения" title="https://w3schools.com" onclick="window.open('https://w3schools.com')"> 
+			<input id="matetial_learn_1" type="button" onmouseover="onmousebutton_matetiallearn(1, true)" onmouseout="onmousebutton_matetiallearn(1,false)" value="Материал обучения" title="https://w3schools.com" onclick="window.open('https://w3schools.com')"> 
 			<a href="#UP" target="_self">↑ Вверх ↑</a>
-			<input class="matetial_learn_2" type="button" value="Материал обучения" title="https://developer.mozilla.org/" onClick="window.open('https://developer.mozilla.org')">
+			<input id="matetial_learn_2" type="button" onmouseover="onmousebutton_matetiallearn(2, true)" onmouseout="onmousebutton_matetiallearn(2,false)" value="Материал обучения" title="https://developer.mozilla.org/" onClick="window.open('https://developer.mozilla.org')">
+			<br><br>
+			<input id="button_topic" type="button" onmouseover="onmousebutton_topic(true)" onmouseout="onmousebutton_topic(false)" onclick="SelectTopic()" value="Тёмная тема">
 		</div>
 		<br>
-		<footer>Copyright Igor Bogdanov</footer>
-		<!--<br><div id="test"></div>-->
+		<footer id="copyright">Copyright Igor Bogdanov</footer>
 	</body>
 </html>

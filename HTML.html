@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<title>BIM-Technology</title>
-		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.">
+		<meta charset="utf-8">
 		<link rel="icon" href="favicon-logo.ico">
 		<link rel="stylesheet" href="./css/style.css">
 		<link rel="stylesheet" href="./css/music.css">
@@ -49,7 +49,7 @@
 			<tr><td title="Отчество пользователя">Отчество: </td><td>Михайлович</td></tr>
 			<tr><td title="Фамилия пользователя">Фамилия: </td><td>Богданов</td></tr>
 			<tr><td title="Дата и рождения пользователя">Дата рождения: </td><td>09/08/1997</td></tr>
-			<tr><td title="Возраст пользователя">Возраст: </td><td>25 лет</td></tr>
+			<tr><td title="Возраст пользователя">Возраст: </td><td id="age">возраст</td></tr>
 			<tr><td title="Рост пользователя">Рост: </td><td>184 см</td></tr>
 			<tr><td title="Вес пользователя">Вес: </td><td>80 кг</td></tr>
 			<tr><td title="Семейное положение пользователя">Семейное положение: </td><td>Не женат</td></tr>
@@ -63,7 +63,7 @@
 			<tr><td title="Специальность пользователя">Специальность: </td><td>«Автоматизированные электроприводы»</td></tr>
 			<tr><td title="Место работы пользователя">Место работы: </td><td>ООО «СтройМонтажЭнергоСети»</td></tr>
 			<tr><td title="Должность пользователя">Должность: </td><td>«Монтажник наружного трубопровода»</td></tr>
-			<tr><td title="Ранг в IT индустрии пользователя">Ранг в IT индустрии: </td><td>«Junior Developer»</td></tr>
+			<tr><td title="Ранг в IT индустрии пользователя">Ранг в IT индустрии: </td><td>«Middle Developer»</td></tr>
 			<tr><td title="Ссылка на ВКонтакте пользователя">Ссылка на ВКонтакте: </td><td><a href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov" target="_blank">igor___bogdanov</a></td></tr>
 			<tr><td title="Ссылка на Instagram.com пользователя">Ссылка на Instagram: </td><td><a href="https://www.instagram.com/igor______bogdanov/" title="https://www.instagram.com/igor______bogdanov/" target="_blank">igor______bogdanov</a></td></tr>
 			<tr><td title="Ссылка на Mail пользователя">Ссылка на Mail: </td><td><a href="https://e.mail.ru/compose/" title="igorbogdanov97@mail.ru" target="_blank">igorbogdanov97@mail.ru</a></td></tr>
@@ -100,7 +100,7 @@
 			<br>
 			аудиовизуальное произведение, записанное на физическом носителе.
 		</blockquote>
-		<video id="video_gameextream" src="./video/GameExtream-RPG [RUS].mp4" title="Видеообзор SAMP сервера, проекта GameExtream-RPG" poster="images/screensaver_video_gameextream.jpg" controls></video>
+		<video id="video_gameextream" src="./video/GameExtream-RPG [RUS].mp4" title="Видеообзор SAMP сервера, проекта GameExtream-RPG" poster="./images/screensaver_video_gameextream.jpg" controls></video>
 		<p class="text_w_shadow_b center">Видеообзор SAMP сервера, проекта <a href="https://vk.com/gameextream" title="Ссылка на группу vk.com GameExtream-RPG" target="_blank"><cite>GameExtream-RPG</cite></a>.</cite></p>
 		<p class="text_b_shadow_w center">Аудио <span class="text_w_shadow_b">— это общий термин, относящийся к звуковым технологиям.</span></p>
 		<figure>
@@ -112,7 +112,7 @@
 		<div id="music-panel" class="music-panel notselection">
 			<audio id="music_player" type="audio/wav"></audio>
 			<div class="text_w_shadow_b music-player-text">Проигрыватель
-				<progress id="music_progress"></progress>
+				<progress id="music_progress" class="music_day_1 music_day_2 music_day_3"></progress>
 				<div class="music_interface">
 					<div id="music_time"></div>
 					<p class="music_player_text_track"><span id="music_number"></span> <span id="music_message"></span></p>
@@ -139,10 +139,6 @@
 					<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(true)" value="+5 секунд">
 				</div>
 			</div>	
-			<script>
-				Music_Treck();
-				Music_ListCreate();
-			</script>
 		</div>
 		<br><br><br>
 		<address>Разработчик сайта: <a href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov" target="_blank">Богданов Игорь Михайлович</a></address>
@@ -156,5 +152,12 @@
 		</div>
 		<br>
 		<footer id="copyright">Copyright Igor Bogdanov</footer>
+		<br>
+		<div id="test"></div>
 	</body>
+	<script>
+		Music_Treck();
+		Music_ListCreate();
+		Age();
+	</script>
 </html>

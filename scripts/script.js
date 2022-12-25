@@ -87,6 +87,12 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("video_gameextream").style.outline = "";
         document.getElementById("image_Markul").style.outline = "";
         document.getElementById("music-panel").style.background = "";
+        document.getElementById("music_progress").classList.remove("music_night_1");
+        document.getElementById("music_progress").classList.remove("music_night_2");
+        document.getElementById("music_progress").classList.remove("music_night_3");
+        document.getElementById("music_progress").classList.add("music_day_1");
+        document.getElementById("music_progress").classList.add("music_day_2");
+        document.getElementById("music_progress").classList.add("music_day_3");
         document.getElementById("music_list").style.background = "";
         document.getElementById("music_select").style.background = "";
         document.getElementById("music_previoustrack").style.background = music_OnRandom == true ? 
@@ -126,6 +132,12 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("video_gameextream").style.outline = "#2c2c2c solid 4px";
         document.getElementById("image_Markul").style.outline = "#2c2c2c solid 4px";
         document.getElementById("music-panel").style.background = "#2c2c2c";
+        document.getElementById("music_progress").classList.remove("music_day_1");
+        document.getElementById("music_progress").classList.remove("music_day_2");
+        document.getElementById("music_progress").classList.remove("music_day_3");
+        document.getElementById("music_progress").classList.add("music_night_1");
+        document.getElementById("music_progress").classList.add("music_night_2");
+        document.getElementById("music_progress").classList.add("music_night_3");
         document.getElementById("music_list").style.background = "white";
         document.getElementById("music_select").style.background = "#383838";
         document.getElementById("music_previoustrack").style.background = 
@@ -196,4 +208,30 @@ function onmousebutton_topic(value) {
             "color:white;background:black;" : "color:black;background:white;";
     }
     return;
+}
+
+function Age() {
+    let birthday = new Date(1997, 7, 9, 14);
+    let birthday_year = birthday.getFullYear();
+    let birthday_value = birthday.getMonth() * 30 * 24 + birthday.getDate() * 24 + birthday.getHours();
+    let data = new Date();
+    let year = data.getFullYear();
+    let year_value = data.getMonth() * 30 * 24 + data.getDate() * 24 + data.getHours();
+    year = year - birthday_year;
+    if(birthday_value > year_value) {
+        year--;
+    }
+    document.getElementById("age").innerText = year + " " + AgeText(year);
+    return;
+}
+
+function AgeText(value) {
+    value = value % 100;
+    if(value > 20) {
+        value = value % 10;
+    }
+    if(value < 0) return "неизвестен";
+    else if(value == 1) return "год";
+    else if(value >= 2 && value <= 4) return "года";
+    else return "лет";
 }

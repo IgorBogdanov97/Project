@@ -51,7 +51,7 @@ let music_OnRandom = false;
 let music_Id = Music_RandomTreck();
 let music_OldId = 0;
 let music_Play = true;
-let music_Muted = true;
+let music_Muted = false;
 let music_Volume = 1;
 let music_PlayBackRate = 1;
 let music_SelectTime = null;
@@ -65,10 +65,6 @@ let Music_ExecutorHref = new Map([
 
 function Music_Treck() {
     let message = "";
-    let muted = music_Muted == true ? 
-        "muted" : "";
-    let autoplay = music_Play == true ? 
-        "autoplay" : "";
     let music_Player = document.getElementById("music_player");
     let music_Message = document.getElementById("music_message");
     let music_Number = document.getElementById("music_number");
@@ -77,10 +73,11 @@ function Music_Treck() {
         "" : " feat. ";
     let Executor = Music_IsExecutor(music_Id) == -1 ? 
         "Исполнитель " : "Исполнители ";
-
     music_Player.src=`.\\music\\${Music_FileName[music_Id]}.mp3`;
-    music_Player.autoplay = autoplay;
-    music_Player.muted = muted;
+    music_Player.autoplay = music_Play == true ? 
+        "autoplay" : "";
+    music_Player.muted = music_Muted == true ? 
+        "muted" : "";
     music_Player.playbackRate = music_PlayBackRate;
     music_Player.volume = music_Volume;
 
@@ -329,19 +326,20 @@ function Music_ConvertTime(time) {
     let seconds = Math.ceil(time - 1);
     let minutes = Math.ceil(time / 60 - 1);
     let ext_seconds = Math.ceil(time % 60 - 1);
-    if (seconds < 1) return `00:00`; //  меньше 1с
-    else if (seconds < 10) return `00:0${seconds}`;  // меньше 10с
-    else if (seconds < 60) return `00:${seconds}`; // меньше 1м
-    else if (seconds < 600) { // меньше 10м
-        if (ext_seconds < 10) { // меньше 10м, и 10с
+
+    if (seconds < 1) return `00:00`;
+    else if (seconds < 10) return `00:0${seconds}`;
+    else if (seconds < 60) return `00:${seconds}`;
+    else if (seconds < 600) {
+        if (ext_seconds < 10) {
             return `0${minutes}:0${ext_seconds}`;
-        } else { // меньше 10м, больше 9с
+        } else {
             return `0${minutes}:${ext_seconds}`;
         }
     }
-    else if (ext_seconds < 10) { // больше 10м, меньше 10с
+    else if (ext_seconds < 10) {
         return `${minutes}:0${ext_seconds}`;
-    }// больше 10м, больше 9с
+    }
     else return `${minutes}:${ext_seconds}`;
 }
 
@@ -406,11 +404,12 @@ document.onclick = function(e) {
         e = window.event; 
     }
     //document.getElementById("test").innerText = `X: ${getX(e)}, Y: ${getY(e)}`;
-    if (getX(e) >= 559 && getX(e) <= 960 && getY(e) >= 3881 && getY(e) <= 3895) {
+    if (getX(e) >= 559 && getX(e) <= 960 && getY(e) >= 3883  && getY(e) <= 3904) {
         let value =  (getX(e) - 559) / ((960 - 559) / 100);
         let music_Player = document.getElementById("music_player");
         music_Player.currentTime = music_Player.duration / 100 * value;
     }
+
     function getX(e) {
         if (e.pageX) return e.pageX;
         else if (e.clientX) return e.clientX + ( document.documentElement.scrollLeft || document.body.scrollLeft ) - document.documentElement.clientLeft;

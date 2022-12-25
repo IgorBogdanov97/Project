@@ -78,7 +78,7 @@ function Music_Treck() {
     let Executor = Music_IsExecutor(music_Id) == -1 ? 
         "Исполнитель " : "Исполнители ";
 
-    music_Player.src=`\\music\\${Music_FileName[music_Id]}.mp3`;
+    music_Player.src=`.\\music\\${Music_FileName[music_Id]}.mp3`;
     music_Player.autoplay = autoplay;
     music_Player.muted = muted;
     music_Player.playbackRate = music_PlayBackRate;

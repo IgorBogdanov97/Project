@@ -1,69 +1,130 @@
-const Music_FileName = [
-    "",
-    "Markul - Syrena",
-    "Markul - Episode 2",
-    "Markul - Карусель",
-    "Markul - Белка",
-    "Markul - Episode 3",
-    "Markul feat. SALUKI - Без фокусов",
-    "Markul - Cheat Code",
-    "Markul - Episode 4",
-    "Markul - Бумеранг",
-    "Markul - Cuba Libre",
-    "Markul - Никто не увидит",
-    "Markul - Episode 5",
-    "Markul - Вредные привычки",
-    "Markul feat. ANIKV - Rick James",
-    "Markul - Zima Blue",
-    "Markul - Episode 6",
-    "Markul - Лабиринт",
-    "Markul feat. Dyce - Dali",
-    "Markul - Полёт нормальный",
-    "Markul - 10,000 Ночей"
+const Music_AlbumArtist = [ // исполнитель альбома
+    "Markul",
+    "Markul",
+    "Pyrokinesis",
 ];
-let randomMusic_FileName = Array.from(Music_FileName);
 
-const Music_Download = [
-    "",
-    "https://kmuz.net/mp3-track/1256242980-markul-syrena",
-    "https://kmuz.net/mp3-track/1668960390-markul-episode-2",
-    "https://kmuz.net/mp3-track/1236956775-markul-karusel",
-    "https://kmuz.net/mp3-track/284855360-markul-belka",
-    "https://kmuz.net/mp3-track/2134549025-markul-episode-3",
-    "https://kmuz.net/mp3-track/1182447618-markul-saluki-bez-fokusov",
-    "https://kmuz.net/mp3-track/750444515-markul-cheat-code",
-    "https://kmuz.net/mp3-track/200996284-markul-episode-4",
-    "https://kmuz.net/mp3-track/1299419388-markul-bumerang",
-    "https://kmuz.net/mp3-track/1379601309-markul-cuba-libre",
-    "https://kmuz.net/mp3-track/964370814-markul-nikto-ne-uvidit",
-    "https://kmuz.net/mp3-track/129714015-markul-episode-5",
-    "https://kmuz.net/mp3-track/371976677-markul-vrednye-privychki",
-    "https://kmuz.net/mp3-track/1861967160-markul-anikv-rick-james",
-    "https://kmuz.net/mp3-track/1225372597-markul-zima-blue",
-    "https://kmuz.net/mp3-track/893088537-markul-episode-6",
-    "https://kmuz.net/mp3-track/477861626-markul-labirint",
-    "https://kmuz.net/mp3-track/2059119835-markul-dyce-dali",
-    "https://kmuz.net/mp3-track/1107018420-markul-polyot-normalnyj",
-    "https://kmuz.net/mp3-track/675010709-markul-10000-nochej",
+const Music_AlbumName = [ // название альбома
+    "Great Depression",
+    "Sense of Human",
+    "Геометрия тьмы",
 ];
-const music_Max = Music_FileName.length - 1;
+
+const Music_AlbumYear = [ // год альбома
+    2018,
+    2021,
+    2022,
+];
+
+const Music_FileName = [ // список треков альбома 
+    [
+        "",
+        "Markul - Отрицание",
+        "Markul - Компас",
+        "Markul - 25",
+        "Markul - Деньги на ветер",
+        "Markul - Blues",
+        "Markul - Без тебя",
+        "Markul - Худший друг",
+        "Markul - Миражи",
+        "Markul - Серпантин",
+    ], [
+        "",
+        "Markul - Syrena",
+        "Markul - Episode 2",
+        "Markul - Карусель",
+        "Markul - Белка",
+        "Markul - Episode 3",
+        "Markul feat. SALUKI - Без фокусов",
+        "Markul - Cheat Code",
+        "Markul - Episode 4",
+        "Markul - Бумеранг",
+        "Markul - Cuba Libre",
+        "Markul - Никто не увидит",
+        "Markul - Episode 5",
+        "Markul - Вредные привычки",
+        "Markul feat. ANIKV - Rick James",
+        "Markul - Zima Blue",
+        "Markul - Episode 6",
+        "Markul - Лабиринт",
+        "Markul feat. Dyce - Dali",
+        "Markul - Полёт нормальный",
+        "Markul - 10,000 Ночей",
+    ], [
+        "",
+        "pyrokinesis - Притча во языцех (Интро)",
+        "pyrokinesis - Претор был прав",
+        "pyrokinesis - Радуга земного тяготения",
+        "pyrokinesis - А что если смерть существо",
+        "pyrokinesis - Герметика",
+        "pyrokinesis - Я верю только в неизбежность зла",
+        "pyrokinesis - Ветрянка",
+        "pyrokinesis - Аморе, аморе",
+        "pyrokinesis - Нежное электричество",
+        "pyrokinesis - В джазе одни девчонки",
+        "pyrokinesis - Шерше ля фам",
+        "pyrokinesis - Люблю грозу в начале мая",
+        "pyrokinesis - Шёпот далёких звёзд",
+        "pyrokinesis - Эдельвейс",
+        "pyrokinesis - Люди, хтонь, небытие",
+        "pyrokinesis - Докучные сказки, докучные сказки, докучные",
+        "pyrokinesis - Отказываю небу",
+        "pyrokinesis - Геометрия тьмы",
+        "pyrokinesis - Время и камушки (Аутро)",
+        "pyrokinesis - Время вернуться назад",
+        "pyrokinesis - Что отличает птицу от летучей мыши",
+        "pyrokinesis - Звёзды все принадлежат богам",
+    ],
+];
+
+const Music_Album_Href = (text) => `https://music.yandex.ru/search?text=${text}`; // ссылка на альбом
+
+const Music_ExecutorHref = (name) => { // ссылка на википедию
+    if(name == "SALUKI")
+        return "https://ru.wikipedia.org/wiki/Saluki";
+    else if(name == "Dyce") 
+        return "https://dtf.ru/u/459777-spiderman68/957190-dyce-biografiya-tvorchestvo-i-lichnaya-zhizn";
+    else 
+        return `https://ru.wikipedia.org/wiki/${name}`;
+}
+
+const Music_AlbumID = Math.floor(Math.random() * Music_AlbumArtist.length); // включение рандомного альбома
+const music_Max = Music_FileName[Music_AlbumID].length - 1;
+
+let Music_RandomFileName = Array.from(Music_FileName[Music_AlbumID]); // список рандомных треков
 let music_OnRandom = false;
 let music_Id = Music_RandomTreck();
 let music_OldId = 0;
 let music_Play = true;
-let music_Muted = false;
+let music_Muted = false; // false
 let music_Volume = 1;
 let music_PlayBackRate = 1;
 let music_SelectTime = null;
 
-let Music_ExecutorHref = new Map([
-    ["Markul", "https://ru.wikipedia.org/wiki/Markul"],
-    ["SALUKI", "https://ru.wikipedia.org/wiki/Saluki"],
-    ["ANIKV", "https://ru.wikipedia.org/wiki/ANIKV"],
-    ["Dyce", "https://dtf.ru/u/459777-spiderman68/957190-dyce-biografiya-tvorchestvo-i-lichnaya-zhizn"],
-]);
+function Music_SelectAlbum() { // выбор рандомного альбома
+    let music_Photo_Href = document.getElementById("music_photo_href");
+    let music_Image = document.getElementById("music_image");
+    let music_Executor = document.getElementById("music_executor");
+    let music_Album_Href = document.getElementById("music_album_href");
+    let music_Namealbum = document.getElementById("music_namealbum");
+    
+    let image_src = `./images/${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]}.jpg`;
+    let album_title = `"${Music_AlbumName[Music_AlbumID]}" (${Music_AlbumYear[Music_AlbumID]})`;
+    
+    music_Photo_Href.title = Music_AlbumArtist[Music_AlbumID];
+    music_Photo_Href.href = Music_ExecutorHref(Music_AlbumArtist[Music_AlbumID]);
+    music_Image.src = image_src;
+    music_Image.alt = Music_AlbumArtist[Music_AlbumID];
+    music_Executor.innerText = Music_AlbumArtist[Music_AlbumID];
+    music_Executor.href = Music_ExecutorHref(Music_AlbumArtist[Music_AlbumID]);
+    music_Executor.title = Music_AlbumArtist[Music_AlbumID];
+    music_Album_Href.href = Music_Album_Href(`${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]}`);
+    music_Album_Href.title = `Ссылка на альбом ${album_title}`;
+    music_Namealbum.innerText = album_title;
+    return;
+}
 
-function Music_Treck() {
+function Music_Treck() { // запуск проигрывателя
     let message = "";
     let music_Player = document.getElementById("music_player");
     let music_Message = document.getElementById("music_message");
@@ -73,7 +134,9 @@ function Music_Treck() {
         "" : " feat. ";
     let Executor = Music_IsExecutor(music_Id) == -1 ? 
         "Исполнитель " : "Исполнители ";
-    music_Player.src=`.\\music\\${Music_FileName[music_Id]}.mp3`;
+    let Album = `${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]} (${Music_AlbumYear[Music_AlbumID]})`;
+
+    music_Player.src=`.\\music\\${Album}\\${Music_FileName[Music_AlbumID][music_Id]}.mp3`;
     music_Player.autoplay = music_Play == true ? 
         "autoplay" : "";
     music_Player.muted = music_Muted == true ? 
@@ -82,44 +145,40 @@ function Music_Treck() {
     music_Player.volume = music_Volume;
 
     if(music_OnRandom == true) {
-        music_Number.innerText = `( ${(music_Max-randomMusic_FileName.length+1)}/${music_Max} )`;
+        music_Number.innerText = `( ${(music_Max-Music_RandomFileName.length+1)}/${music_Max} )`;
     } else {
         music_Number.innerText = `( ${(music_Id)}/${music_Max} )`;
     }
     
     if (Feat.length > 0) {
-        let parts = Music_FileName[music_Id].slice(Music_FileName[music_Id].indexOf('feat.')+6).split(' ');
+        let parts = Music_FileName[Music_AlbumID][music_Id].slice(Music_FileName[Music_AlbumID][music_Id].indexOf('feat.')+6).split(' ');
         for (let i = 0; i < parts.length; i++) {
             if (parts[i] == '-') break;
-            message += ` <a href="${Music_ExecutorHref.get(parts[i])}" title="Ссылка на биографию ${parts[i]}" target="_blank"><i >${parts[i]}</i></a>`; 
+            message += ` <a href="${Music_ExecutorHref(parts[i])}" title="Ссылка на биографию ${parts[i]}" target="_blank"><i >${parts[i]}</i></a>`; 
         }
     }
     music_Message.innerHTML = Executor + 
-        `<a href="${Music_ExecutorHref.get(ExecutorOne)}" title="Ссылка на биографию ${ExecutorOne}" target="_blank"><i >${ExecutorOne}</i></a>` + Feat + message + `, трек 
-        <a href="${Music_Download[music_Id]}" title="Ссылка на трек &#8220;${MusicName(music_Id)}&#8220; ${Music_Year(music_Id)}" target="_blank">
-            <cite>"${MusicName(music_Id)}" ${Music_Year(music_Id)}</cite>
+        `<a href="${Music_ExecutorHref(ExecutorOne)}" title="Ссылка на биографию ${ExecutorOne}" target="_blank"><i >${ExecutorOne}</i></a>` + Feat + message + `, трек 
+        <a href="https://new.soundmax.me/search/${Music_FileName[Music_AlbumID][music_Id]}" title="Ссылка на трек &#8220;${MusicName(music_Id)}&#8220; (${Music_AlbumYear[Music_AlbumID]})" target="_blank">
+            <cite>"${MusicName(music_Id)}" (${Music_AlbumYear[Music_AlbumID]})</cite>
         </a>.`;
 
     return;
 }
 
-function Music_Year(id) {
-    return (1 <= id <= 20) ? "(2021)" : "(years)";
+function Music_IsExecutor(id) { // есть ли исполнитель на feat
+    return Music_FileName[Music_AlbumID][id].indexOf('feat.');
 }
 
-function Music_IsExecutor(id) {
-    return Music_FileName[id].indexOf('feat.');
+function Music_Executor(id) { // начальный исполнитель
+    return Music_FileName[Music_AlbumID][id].slice(0, Music_FileName[Music_AlbumID][id].indexOf(' '));
 }
 
-function Music_Executor(id) {
-    return Music_FileName[id].slice(0, Music_FileName[id].indexOf(' '));
+function MusicName(id) { // название трека
+    return Music_FileName[Music_AlbumID][id].slice(Music_FileName[Music_AlbumID][id].indexOf('-') + 2);
 }
 
-function MusicName(id) {
-    return Music_FileName[id].slice(Music_FileName[id].indexOf('-') + 2);
-}
-
-function Music_Volume(value) {
+function Music_Volume(value) { // редактор громкости
     let music_Player = document.getElementById("music_player");
     let music_Vol = document.getElementById("music_volume");
     music_Player.muted = value == 0 ? !music_Player.muted : false;
@@ -143,22 +202,24 @@ function Music_Volume(value) {
     return;
 }
 
-function Music_PauseTrack() {
+function Music_PauseTrack() { // запуск/остановка проигрывателя
     let music_Player = document.getElementById("music_player");
     let music_Pause = document.getElementById("music_pause");
 
     if (music_Player.paused == false) {
-        music_Pause.style = "value:Старт;color:lime;";
+        music_Pause.innerText= "Старт";
+        music_Pause.style.color = "lime";
         music_Player.pause();
     } else {
-        music_Pause.style = "value:Пауза;color:red;";
+        music_Pause.innerText = "Пауза";
+        music_Pause.style.color = "red";
         music_Player.play();
     }
     music_Play = !music_Play;
     return;
 }
 
-function Music_NextTrack(value) {
+function Music_NextTrack(value) { // переключение треков
     if (music_OnRandom == true) {
         if (value != 1) return;
         music_OldId = music_Id;
@@ -180,29 +241,29 @@ function Music_NextTrack(value) {
 
 Music_LoadTracks();
 
-function Music_LoadTracks() {
-    randomMusic_FileName = Array.from(Music_FileName);
+function Music_LoadTracks() { // добавление все треков альбоме в рандомный список
+    Music_RandomFileName = Array.from(Music_FileName[Music_AlbumID]);
     return;
 }
 
-function Music_IsRandom() {
-    if (randomMusic_FileName.length <= 1) {
+function Music_IsRandom() { // удаление строчки из рандомного списка, если их нет, то обнуление
+    if (Music_RandomFileName.length <= 1) {
         Music_LoadTracks();
         Music_ListResetColors();
         return Music_IsRandom();
     }
     let rand = Music_RandomTreck();
-    let music = Music_FileName.indexOf(randomMusic_FileName[rand]);
-    randomMusic_FileName.splice(rand, 1);
+    let music = Music_FileName[Music_AlbumID].indexOf(Music_RandomFileName[rand]);
+    Music_RandomFileName.splice(rand, 1);
     return music;
 }
 
-function Music_RandomTreck() {
-    let rand = Math.floor(Math.random() * randomMusic_FileName.length);
+function Music_RandomTreck() { // выбор рандомного трека
+    let rand = Math.floor(Math.random() * Music_RandomFileName.length);
     return rand < 1 ? 1 : rand;
 }
 
-function Music_RandomTrack() {
+function Music_RandomTrack() { //  включения режима "рандомного трека"
     music_OnRandom = !music_OnRandom;
     let music_Previoustrack = document.getElementById("music_previoustrack");
     if (music_OnRandom == true) {
@@ -220,28 +281,28 @@ function Music_RandomTrack() {
     return;
 }
 
-function Music_ListCreate() {
+function Music_ListCreate() { // создание "плей-листа"
     let music_List = document.getElementById("music_list");
     let message = "";
     for (let i = 1; i <= music_Max; i++) {
         if (i == music_Id) {
             if(TopStatus == false) {
-                message += `<option id=music_list_${i} style="background:lime;" value="${i}" selected>${i}. ${Music_FileName[i]} </option>`;
+                message += `<option id=music_list_${i} style="background:lime;" value="${i}" selected>${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             } else {
-                message += `<option id=music_list_${i} style="background:white;" value="${i}" selected>${i}. ${Music_FileName[i]} </option>`;
+                message += `<option id=music_list_${i} style="background:white;" value="${i}" selected>${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             }
         }
-        else if (randomMusic_FileName.indexOf(Music_FileName[i]) == -1) {
+        else if (Music_RandomFileName.indexOf(Music_FileName[Music_AlbumID][i]) == -1) {
             if(TopStatus == false) {
-                message += `<option id=music_list_${i} style="background:red" value="${i}" >${i}. ${Music_FileName[i]} </option>`;
+                message += `<option id=music_list_${i} style="background:red" value="${i}" >${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             } else {
-                message += `<option id=music_list_${i} style="background:#383838" value="${i}" >${i}. ${Music_FileName[i]} </option>`;
+                message += `<option id=music_list_${i} style="background:#383838" value="${i}" >${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             }
         } else {
             if(TopStatus == false) {
-                message += `<option id=music_list_${i} style="background:#b3cccc;" value="${i}">${i}. ${Music_FileName[i]} </option>`;
+                message += `<option id=music_list_${i} style="background:#b3cccc;" value="${i}">${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             } else {
-                message += `<option id=music_list_${i} style="background:grey;" value="${i}">${i}. ${Music_FileName[i]} </option>`;
+                message += `<option id=music_list_${i} style="background:grey;" value="${i}">${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             }
         }
     }
@@ -249,7 +310,7 @@ function Music_ListCreate() {
     return;
 }
 
-function Music_ListSelectColor() {
+function Music_ListSelectColor() { // цвет фона "плей-листа" взависимости от статуса
     let music_List = document.getElementById("music_list");
     music_List.options[music_Id-1].selected = true;
     music_List.options[music_Id-1].style.background = TopStatus == false ? "lime" : "white";
@@ -272,14 +333,14 @@ function Music_ListSelectColor() {
     return;
 }
 
-function Music_ListSetSelection() {
+function Music_ListSetSelection() { // выбрать главный пункт в "плей-листе"
     let music_List = document.getElementById("music_list");
     music_List.options[music_Id-1].selected = true;
     music_SelectTime = null;
     return;
 }
 
-function Music_ListResetColors() {
+function Music_ListResetColors() { // очистка фона "плей-листа"
     music_OldId = 0;
     let music_List = document.getElementById("music_list");
     for (let i = 1; i <= music_Max; i++) {
@@ -288,7 +349,7 @@ function Music_ListResetColors() {
     return;
 }
 
-function Music_Select() {
+function Music_Select() { // выбрать трек из "плей-листа"
     if (music_OnRandom == true) return Music_ListSetSelection();
     let music_List = document.getElementById("music_list");
     let music_Select = +music_List.options[music_List.selectedIndex].value;
@@ -301,7 +362,7 @@ function Music_Select() {
     return;
 }
 
-function Music_PlayBackRate(value) {
+function Music_PlayBackRate(value) { // изменение скорости трека
     let music_Player = document.getElementById("music_player");
     let music_Playbackrate = document.getElementById("music_playbackrate");
 
@@ -316,13 +377,13 @@ function Music_PlayBackRate(value) {
     return;
 }
 
-function Music_CurrentTime(value) {
+function Music_CurrentTime(value) { // перемотка на 5 секунд вперёд/назад
     let music_Player = document.getElementById("music_player");
     music_Player.currentTime += value == false ? -5 : +5;
     return;
 }
 
-function Music_ConvertTime(time) {
+function Music_ConvertTime(time) { // конверт корректного отображения времени
     let seconds = Math.ceil(time - 1);
     let minutes = Math.ceil(time / 60 - 1);
     let ext_seconds = Math.ceil(time % 60 - 1);
@@ -344,7 +405,7 @@ function Music_ConvertTime(time) {
 }
 
 setInterval(Music_AudioStatus, 500);
-function Music_AudioStatus() {
+function Music_AudioStatus() { // CallBack проирывателя
     let music_Player = document.getElementById("music_player");
     let music_Time = document.getElementById("music_time");
     let music_List = document.getElementById("music_list");
@@ -372,7 +433,7 @@ function Music_AudioStatus() {
     return;
 }
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function(event) { // реакция на нажатие кнопок
     switch(event.code) {
         case "MediaTrackPrevious": {
             Music_NextTrack(-1);
@@ -399,13 +460,15 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-document.onclick = function(e) {
+document.onclick = function(e) { // кликабельная область проигрывателя
     if (!e) { 
         e = window.event; 
     }
-    //document.getElementById("test").innerText = `X: ${getX(e)}, Y: ${getY(e)}`;
-    if (getX(e) >= 559 && getX(e) <= 960 && getY(e) >= 3883  && getY(e) <= 3904) {
-        let value =  (getX(e) - 559) / ((960 - 559) / 100);
+    let X1 = 559, X2 = 960; // 
+    let Y1 = 3965, Y2 = Y1 + 20; // Y1 - верх
+    document.getElementById("test").innerText = `X: ${getX(e)}, Y: ${getY(e)}`;
+    if ( getX(e) >= X1 && getX(e) <= X2 && getY(e) >= Y1 && getY(e) <= Y2 ) {
+        let value = ( getX(e) - X1 ) / ( ( X2 - X1 ) / 100 );
         let music_Player = document.getElementById("music_player");
         music_Player.currentTime = music_Player.duration / 100 * value;
     }

@@ -68,7 +68,7 @@ function SelectTopic(value=!TopStatus) {
 
     if (value == false) {
         document.body.style.background = "";
-        for (let i = 1; i < music_Max; i++) {
+        for (let i = 1; i < 15; i++) {
             if (i < 15) {
                 document.getElementById(`logo_${i}`).style.color = "";
             }
@@ -85,7 +85,7 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("image_Jim_Carrey").style.outline = "";
         document.getElementById("gadget_sand_coffee").style.outline = "";
         document.getElementById("video_gameextream").style.outline = "";
-        document.getElementById("image_Markul").style.outline = "";
+        document.getElementById("music_image").style.outline = "";
         document.getElementById("music-panel").style.background = "";
         document.getElementById("music_progress").classList.remove("music_night_1");
         document.getElementById("music_progress").classList.remove("music_night_2");
@@ -111,7 +111,7 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("copyright").style.color = "black";
     } else {
         document.body.style.background = "#383838";
-        for (let i = 1; i <= music_Max; i++) {
+        for (let i = 1; i <= 15; i++) {
             if (i < 15) {
                 document.getElementById(`logo_${i}`).style.color = "#505050";
             }
@@ -130,7 +130,7 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("image_Jim_Carrey").style.outline = "#2c2c2c solid 4px";
         document.getElementById("gadget_sand_coffee").style.outline = "#2c2c2c solid 4px";
         document.getElementById("video_gameextream").style.outline = "#2c2c2c solid 4px";
-        document.getElementById("image_Markul").style.outline = "#2c2c2c solid 4px";
+        document.getElementById("music_image").style.outline = "#2c2c2c solid 4px";
         document.getElementById("music-panel").style.background = "#2c2c2c";
         document.getElementById("music_progress").classList.remove("music_day_1");
         document.getElementById("music_progress").classList.remove("music_day_2");

@@ -1,9 +1,24 @@
-.music-panel {
+#music-panel {
     border-radius: 10%;
     text-align: center;
     background: #178282;
     outline: black solid 1px;
-    margin: 15px 500px 15px 500px;
+    margin: 15px 400px;
+}
+
+img#music_image {
+	width: 600px;
+	height: 400px;
+	margin-bottom: 10px;
+	outline: #178282 solid 4px;
+}
+
+#music_executor {
+	font-style: italic;
+}
+
+figure.music_img {
+    padding-top: 20px;
 }
 
 progress#music_progress.music_day_1 {
@@ -65,7 +80,7 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     color: black;
     text-align: center;
     font-style: oblique;
-    font-weight:lighter;
+    font-weight: lighter;
     text-shadow: 0px 1px 1px white;
 }
 
@@ -140,4 +155,13 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 
 #music_volume, #music_playbackrate {
     color: lime;
+}
+
+@media screen and (max-width: 980px) {
+    .music-panel {
+        margin: 1%;
+    }
+    #music_time {
+        font-size: 50%;
+    }
 }

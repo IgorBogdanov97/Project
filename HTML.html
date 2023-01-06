@@ -16,7 +16,7 @@
 		</header>
 		<nav>
 			<ul id="navid_1">
-				<li id="navid_2" onmouseover="onmousebutton_navid(2, true)" onmouseout="onmousebutton_navid(2,false)"><a id="header_1" href="HTML.html" title="Главная страница">Главная</a></li>
+				<li id="navid_2" onmouseover="onmousebutton_navid(2, true)" onmouseout="onmousebutton_navid(2,false)"><a id="header_1" href="HTML.html" title="Главная страница" target="_self">Главная</a></li>
 				<li id="navid_3" onmouseover="onmousebutton_navid(3, true)" onmouseout="onmousebutton_navid(3,false)"><a id="header_2" title="Контакты">Контакты</a>
 					<ul>
 						<li id="navid_4" onmouseover="onmousebutton_navid(4, true)" onmouseout="onmousebutton_navid(4,false)"><a href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov">ВКонтакте</a></li>
@@ -64,6 +64,7 @@
 			<tr><td title="Место работы пользователя">Место работы: </td><td>ООО «СтройМонтажЭнергоСети»</td></tr>
 			<tr><td title="Должность пользователя">Должность: </td><td>«Монтажник наружного трубопровода»</td></tr>
 			<tr><td title="Ранг в IT индустрии пользователя">Ранг в IT индустрии: </td><td>«Middle Developer»</td></tr>
+			<tr><td title="Ссылка на GitHub пользователя">Ссылка на GitHub: </td><td><a href="https://github.com/IgorBogdanov97" title="https://github.com/IgorBogdanov97" target="_blank">IgorBogdanov97</a></td></tr>
 			<tr><td title="Ссылка на ВКонтакте пользователя">Ссылка на ВКонтакте: </td><td><a href="https://vk.com/igor___bogdanov" title="https://vk.com/igor___bogdanov" target="_blank">igor___bogdanov</a></td></tr>
 			<tr><td title="Ссылка на Instagram.com пользователя">Ссылка на Instagram: </td><td><a href="https://www.instagram.com/igor______bogdanov/" title="https://www.instagram.com/igor______bogdanov/" target="_blank">igor______bogdanov</a></td></tr>
 			<tr><td title="Ссылка на Mail пользователя">Ссылка на Mail: </td><td><a href="https://e.mail.ru/compose/" title="igorbogdanov97@mail.ru" target="_blank">igorbogdanov97@mail.ru</a></td></tr>
@@ -100,16 +101,18 @@
 			<br>
 			аудиовизуальное произведение, записанное на физическом носителе.
 		</blockquote>
-		<video id="video_gameextream" src="./video/GameExtream-RPG [RUS].mp4" title="Видеообзор SAMP сервера, проекта GameExtream-RPG" poster="./images/screensaver_video_gameextream.jpg" controls></video>
+		<div>
+			<video id="video_gameextream" src="./video/GameExtream-RPG [RUS].mp4" title="Видеообзор SAMP сервера, проекта GameExtream-RPG" poster="./images/screensaver_video_gameextream.jpg" controls></video>
+		</div>
 		<p class="text_w_shadow_b center">Видеообзор SAMP сервера, проекта <a href="https://vk.com/gameextream" title="Ссылка на группу vk.com GameExtream-RPG" target="_blank"><cite>GameExtream-RPG</cite></a>.</cite></p>
 		<p class="text_b_shadow_w center">Аудио <span class="text_w_shadow_b">— это общий термин, относящийся к звуковым технологиям.</span></p>
-		<figure>
-			<a href="https://ru.wikipedia.org/wiki/Markul" title="Markul" target="_blank"><img id="image_Markul" class="Markul" src="./images/Markul - Sense of Human.jpg" alt="Markul"></a>
-			<figcaption class="text_w_shadow_b">
-				Исполнитель <a href="https://ru.wikipedia.org/wiki/Markul" title="Markul" target="_blank"><i>Markul</i></a> - обложка музыкального альбома  <a href="https://sound-fun.online/album/142458/" title="Ссылка на альбом &#8220;Sense of Human&#8220; (2021)" target="_blank"><cite>"Sense of Human" (2021)</cite></a>.
-			</figcaption>
-		</figure>
-		<div id="music-panel" class="music-panel notselection">
+		<div id="music-panel" class="notselection">
+			<figure class="music_img">
+				<a id="music_photo_href" target="_blank"><img id="music_image"></a>
+				<figcaption class="text_w_shadow_b">
+					Исполнитель <a id="music_executor" target="_blank"></a> - обложка музыкального альбома  <a id="music_album_href" target="_blank"><cite id="music_namealbum"></cite></a>.
+				</figcaption>
+			</figure>
 			<audio id="music_player" type="audio/wav"></audio>
 			<div class="text_w_shadow_b music-player-text">Проигрыватель
 				<progress id="music_progress" class="music_day_1 music_day_2 music_day_3"></progress>
@@ -156,8 +159,13 @@
 		<div id="test"></div>
 	</body>
 	<script>
-		Music_Treck();
-		Music_ListCreate();
 		Age();
+		SelectTopic();
+		Music_Treck();
+		Music_SelectAlbum();		
+		Music_ListCreate();
+		onmousebutton_matetiallearn(1,false);
+		onmousebutton_matetiallearn(2,false);
+		onmousebutton_topic(false);
 	</script>
 </html>

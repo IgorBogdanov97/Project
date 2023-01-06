@@ -55,13 +55,6 @@ img.gadgetsandcoffee {
 	outline: #178282 solid 4px;
 }
 
-img.Markul {
-	width: 400px;
-	height: 400px;
-	margin-bottom: 10px;
-	outline: #178282 solid 4px;
-}
-
 p.mem_text {
 	color: white;
 	text-align: center;
@@ -254,4 +247,20 @@ table.table_1 tr th:nth-child(2), td:nth-child(2) {
 footer {
 	text-align: center;
 	font-style: italic;
+}
+
+@media screen and (max-width: 980px) {
+	nav ul li {
+		text-align: left;
+		width: 13.2%;
+	}
+	blockquote {
+		margin: 12%;
+	}
+ 	figcaption, blockquote {
+		font-size: 5%;
+	}
+	.mem_text, p.text_w_shadow_b {
+		font-size: 20%;
+	}
 }

@@ -3,6 +3,7 @@ const Music_AlbumArtist = [ // исполнитель альбома
     "Markul",
     "Markul",
     "pyrokinesis",
+    "STED.D",
 ];
 
 const Music_AlbumName = [ // название альбома
@@ -10,12 +11,14 @@ const Music_AlbumName = [ // название альбома
     "Great Depression",
     "Sense of Human",
     "Геометрия тьмы",
+    "ДЕПРЕССИЯ СУЩЕСТВУЕТ"
 ];
 
 const Music_AlbumYear = [ // год альбома
     ,
     2018,
     2021,
+    2022,
     2022,
 ];
 
@@ -77,6 +80,16 @@ const Music_FileName = [ // список треков альбома
         "pyrokinesis - Время вернуться назад",
         "pyrokinesis - Что отличает птицу от летучей мыши",
         "pyrokinesis - Звёзды все принадлежат богам",
+    ], [
+        ,
+        "STED.D - Все могло быть хуже",
+        "STED.D, ЕГОР НАТС - Что-то сдохло внутри",
+        "STED.D - Она сказала мне",
+        "STED.D - Все, что ты хотел знать",
+        "STED.D - Свет и тень",
+        "STED.D - Твой страх, моя глупость",
+        "STED.D - Шанс",
+        "STED.D - Освещаю путь",
     ],
 ];
 

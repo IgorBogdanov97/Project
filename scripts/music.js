@@ -1,7 +1,7 @@
 const Music_AlbumArtist = [ // исполнитель альбома
     "Markul",
     "Markul",
-    "Pyrokinesis",
+    "pyrokinesis",
 ];
 
 const Music_AlbumName = [ // название альбома

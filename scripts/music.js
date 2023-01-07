@@ -49,7 +49,7 @@ const Music_FileName = [ // список треков альбома
         "Markul - Лабиринт",
         "Markul feat. Dyce - Dali",
         "Markul - Полёт нормальный",
-        "Markul - 10,000 Ночей",
+        "Markul - 10,000 ночей",
     ], [
         "",
         "pyrokinesis - Притча во языцех (Интро)",

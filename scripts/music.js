@@ -135,7 +135,6 @@ function Music_Treck() { // запуск проигрывателя
     let Executor = Music_IsExecutor(music_Id) == -1 ? 
         "Исполнитель " : "Исполнители ";
     let Album = `${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]} (${Music_AlbumYear[Music_AlbumID]})`;
-    alert(`.\\music\\${Album}\\${Music_FileName[Music_AlbumID][music_Id]}.mp3`);
     music_Player.src=`.\\music\\${Album}\\${Music_FileName[Music_AlbumID][music_Id]}.mp3`;
     music_Player.autoplay = music_Play == true ? 
         "autoplay" : "";

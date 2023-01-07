@@ -140,12 +140,12 @@ nav { /* задаем цвет фона для контейнера nav. */
 
 nav ul { /* убираем отступы и поля, а также list-style для "ul", и добавляем "position:relative" */
 	margin: 0;
-	padding: 0;
+	padding-left: 50px;
 	list-style: none;
 }
 
 nav ul li { /* применяем inline-block позиционирование к элементам навигации */
-	width: 14.06%;
+	width: 13.55%;
 	display: inline-block;
 	background-color: #178282;
 }

@@ -141,7 +141,7 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 
 #music_random {
     bottom: -7px;
-    width:4.5%;
+    width: 4.5%;
     max-width: 150px;
     max-height: 22.5px;
     position: relative;

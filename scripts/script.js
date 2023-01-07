@@ -62,10 +62,14 @@ function SelectTopic(value=!TopStatus) {
     headerColor = 1;
     TopStatus = value;
     Music_ListCreate();
-    document.getElementById("button_topic").style = value == false ? 
-        "value:'Тёмная тема';color:white;background:black;" : 
-        "value:'Светлая тема';color:black;background:white;";
 
+    if(value == false) {
+        document.getElementById("button_topic").style = "color:white;background:black;";
+        document.getElementById("button_topic").value = "Тёмная тема";
+    } else {
+        document.getElementById("button_topic").style = "color:black;background:white;";
+        document.getElementById("button_topic").value = "Светлая тема";
+    }
     if (value == false) {
         document.body.style.background = "";
         for (let i = 1; i < 15; i++) {
@@ -234,4 +238,16 @@ function AgeText(value) {
     else if(value == 1) return "год";
     else if(value >= 2 && value <= 4) return "года";
     else return "лет";
+}
+
+function LoadPage() {
+    Age();
+    SelectTopic();
+    Music_Treck();
+    Music_SelectAlbum();		
+    Music_ListCreate();
+    onmousebutton_matetiallearn(1,false);
+    onmousebutton_matetiallearn(2,false);
+    onmousebutton_topic(false);
+    return;
 }

@@ -121,22 +121,22 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     background: #96acac;
 }
 
+.music_nexttrack_section {
+    margin-top: 5px;
+}
+
+#music_nexttrack, #music_previoustrack {
+    padding: 1px 20px;
+    font-style: oblique;
+    background: #96acac;
+}
+
 #music_pause {
     color: #ff0000e6;
     padding: 1px 40px;
     font-style: oblique;
     background: #96acac;
     text-shadow: 1px 1px 2px black;
-}
-
-#music_nexttrack_section {
-    margin-top: 5px;
-}
-
-#music_nexttrack, #music_previoustrack {
-    padding: 1px 15px;
-    font-style: oblique;
-    background: #96acac;
 }
 
 #music_random {

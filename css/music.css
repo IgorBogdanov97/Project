@@ -102,7 +102,7 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     text-align: center;
 }
 
-.music_select {
+#music_albumselect, #music_select {
     font-style: oblique;
     background: #96acac;
 }

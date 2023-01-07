@@ -61,9 +61,10 @@ let style = document.createElement('style');
 function SelectTopic(value=!TopStatus) {
     headerColor = 1;
     TopStatus = value;
-    Music_ListCreate();
+    Music_CreateTracksList();
+    Music_CreateAlbumsList();
 
-    if(value == false) {
+    if (value == false) {
         document.getElementById("button_topic").style = "color:white;background:black;";
         document.getElementById("button_topic").value = "Тёмная тема";
     } else {
@@ -97,7 +98,9 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_progress").classList.add("music_day_1");
         document.getElementById("music_progress").classList.add("music_day_2");
         document.getElementById("music_progress").classList.add("music_day_3");
-        document.getElementById("music_list").style.background = "";
+        document.getElementById("music_albumlist").style.background = "";
+        document.getElementById("music_albumselect").style.background = "";
+        document.getElementById("music_tracklist").style.background = "";
         document.getElementById("music_select").style.background = "";
         document.getElementById("music_previoustrack").style.background = music_OnRandom == true ? 
             "#178282" : "";
@@ -142,7 +145,9 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_progress").classList.add("music_night_1");
         document.getElementById("music_progress").classList.add("music_night_2");
         document.getElementById("music_progress").classList.add("music_night_3");
-        document.getElementById("music_list").style.background = "white";
+        document.getElementById("music_albumlist").style.background = "white";
+        document.getElementById("music_albumselect").style.background = "#383838";
+        document.getElementById("music_tracklist").style.background = "white";
         document.getElementById("music_select").style.background = "#383838";
         document.getElementById("music_previoustrack").style.background = 
             TopStatus == true && music_OnRandom == true ?
@@ -222,7 +227,7 @@ function Age() {
     let year = data.getFullYear();
     let year_value = data.getMonth() * 30 * 24 + data.getDate() * 24 + data.getHours();
     year = year - birthday_year;
-    if(birthday_value > year_value) {
+    if (birthday_value > year_value) {
         year--;
     }
     document.getElementById("age").innerText = year + " " + AgeText(year);
@@ -231,23 +236,12 @@ function Age() {
 
 function AgeText(value) {
     value = value % 100;
-    if(value > 20) {
+    if (value > 20) {
         value = value % 10;
     }
-    if(value < 0) return "неизвестен";
-    else if(value == 1) return "год";
-    else if(value >= 2 && value <= 4) return "года";
+    if (value < 0) return "неизвестен";
+    else if (value == 1) return "год";
+    else if (value >= 2 && value <= 4) return "года";
     else return "лет";
 }
 
-function LoadPage() {
-    Age();
-    SelectTopic();
-    Music_Treck();
-    Music_SelectAlbum();		
-    Music_ListCreate();
-    onmousebutton_matetiallearn(1,false);
-    onmousebutton_matetiallearn(2,false);
-    onmousebutton_topic(false);
-    return;
-}

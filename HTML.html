@@ -120,9 +120,14 @@
 						<div id="music_time"></div>
 						<p class="music_player_text_track"><span id="music_number"></span> <span id="music_message"></span></p>
 						<form class="music_text_center">
+							<label class="text_w_shadow_b">Альбомы:</label>
+							<select id="music_albumlist"></select>
+							<input id="music_albumselect" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_albumselect', true)" onmouseout="onmousebutton_music('music_albumselect',false)" value="Выбрать" onClick="Music_SelectAlbum()">
+						</form>
+						<form class="music_text_center">
 							<label class="text_w_shadow_b">Список:</label>
-							<select id="music_list"></select>
-							<input id="music_select" class="music_select text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_select', true)" onmouseout="onmousebutton_music('music_select',false)" value="Выбрать" onClick="Music_Select()">
+							<select id="music_tracklist"></select>
+							<input id="music_select" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_select', true)" onmouseout="onmousebutton_music('music_select',false)" value="Выбрать" onClick="Music_SelectTrack()">
 							<img id="music_random" src="./images/music_random_image.png" onclick="Music_RandomTrack()" title="Случайный трек">
 						</form>
 						<div class="music_nexttrack_section">
@@ -160,5 +165,4 @@
 	</body>
 	<script src="./scripts/script.js"></script>
 	<script src="./scripts/music.js"></script>
-	<script>LoadPage();</script>
 </html>

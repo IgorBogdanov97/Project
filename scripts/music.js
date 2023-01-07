@@ -465,7 +465,7 @@ document.onclick = function(e) { // кликабельная область пр
         e = window.event; 
     }
     let X1 = 559, X2 = 960; // 
-    let Y1 = 3964, Y2 = Y1 + 20; // Y1 - верх
+    let Y1 = 3905, Y2 = Y1 + 20; // Y1 - верх
     console.log(`X: ${getX(e)}, Y: ${getY(e)}`);
     if ( getX(e) >= X1 && getX(e) <= X2 && getY(e) >= Y1 && getY(e) <= Y2 ) {
         let value = ( getX(e) - X1 ) / ( ( X2 - X1 ) / 100 );

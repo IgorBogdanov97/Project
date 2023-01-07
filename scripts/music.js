@@ -139,7 +139,6 @@ function Music_ShowAlbumImage() { // выбор рандомного альбо�
     let music_Executor = document.getElementById("music_executor");
     let music_Album_Href = document.getElementById("music_album_href");
     let music_Namealbum = document.getElementById("music_namealbum");
-    
     let image_src = `./images/${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]}.jpg`;
     let album_title = `"${Music_AlbumName[Music_AlbumID]}" (${Music_AlbumYear[Music_AlbumID]})`;
     
@@ -183,7 +182,7 @@ function Music_Treck() { // запуск проигрывателя
     
     if (Feat.length > 0) {
         let parts = Music_FileName[Music_AlbumID][music_Id].slice(Music_FileName[Music_AlbumID][music_Id].indexOf('feat.')+6).split(' ');
-        alert(parts);
+
         for (let i = 0; i < parts.length; i++) {
             if (parts[i] == '-') break;
             if (parts[i+1] != '-') {

@@ -4,6 +4,7 @@ const Music_AlbumArtist = [ // исполнитель альбома
     "Markul",
     "pyrokinesis",
     "STED.D",
+    "STED.D",
 ];
 
 const Music_AlbumName = [ // название альбома
@@ -11,6 +12,7 @@ const Music_AlbumName = [ // название альбома
     "Great Depression",
     "Sense of Human",
     "Геометрия тьмы",
+    "ДЕПРЕССИИ НЕ СУЩЕСТВУЕТ",
     "ДЕПРЕССИЯ СУЩЕСТВУЕТ"
 ];
 
@@ -19,6 +21,7 @@ const Music_AlbumYear = [ // год альбома
     2018,
     2021,
     2022,
+    2019,
     2022,
 ];
 
@@ -81,9 +84,18 @@ const Music_FileName = [ // список треков альбома
         "pyrokinesis - Что отличает птицу от летучей мыши",
         "pyrokinesis - Звёзды все принадлежат богам",
     ], [
+        "STED.D - Записки на теле",
+        "STED.D - Однажды мне сказали",
+        "STED.D - Жатва",
+        "STED.D - Не знаю, где мы",
+        "STED.D feat. Егор Натс - Мы не навсегда",
+        "STED.D - Проводник",
+        "STED.D - Призраки",
+        "STED.D - Я убью тебя",
+    ], [
         ,
         "STED.D - Все могло быть хуже",
-        "STED.D, ЕГОР НАТС - Что-то сдохло внутри",
+        "STED.D feat. Егор Натс - Что-то сдохло внутри",
         "STED.D - Она сказала мне",
         "STED.D - Все, что ты хотел знать",
         "STED.D - Свет и тень",
@@ -96,10 +108,13 @@ const Music_FileName = [ // список треков альбома
 const Music_Album_Href = (text) => `https://music.yandex.ru/search?text=${text}`; // ссылка на альбом
 
 const Music_ExecutorHref = (name) => { // ссылка на википедию
-    if(name == "SALUKI")
+    if (name == "SALUKI")
         return "https://ru.wikipedia.org/wiki/Saluki";
-    else if(name == "Dyce") 
+    else if (name == "Dyce") 
         return "https://dtf.ru/u/459777-spiderman68/957190-dyce-biografiya-tvorchestvo-i-lichnaya-zhizn";
+    else if (name == "Егор Натс") {
+        return "https://artchange.ru/publ/photo_biography/musical_artists/egor_nats/16-1-0-654";
+    }
     else 
         return `https://ru.wikipedia.org/wiki/${name}`;
 }
@@ -160,7 +175,7 @@ function Music_Treck() { // запуск проигрывателя
     music_Player.playbackRate = music_PlayBackRate;
     music_Player.volume = music_Volume;
 
-    if(music_OnRandom == true) {
+    if (music_OnRandom == true) {
         music_Number.innerText = `( ${(music_Max-Music_RandomFileName.length+1)}/${music_Max} )`;
     } else {
         music_Number.innerText = `( ${(music_Id)}/${music_Max} )`;
@@ -168,8 +183,13 @@ function Music_Treck() { // запуск проигрывателя
     
     if (Feat.length > 0) {
         let parts = Music_FileName[Music_AlbumID][music_Id].slice(Music_FileName[Music_AlbumID][music_Id].indexOf('feat.')+6).split(' ');
+        alert(parts);
         for (let i = 0; i < parts.length; i++) {
             if (parts[i] == '-') break;
+            if (parts[i+1] != '-') {
+                parts[i] = parts[i] + " " + parts[i+1];
+                parts[i+1] = "";
+            }
             message += ` <a href="${Music_ExecutorHref(parts[i])}" title="Ссылка на биографию ${parts[i]}" target="_blank"><i >${parts[i]}</i></a>`; 
         }
     }
@@ -200,11 +220,11 @@ function Music_Volume(value) { // редактор громкости
     music_Player.muted = value == 0 ? !music_Player.muted : false;
     music_Muted = music_Player.muted;
 
-    if(value != 0) {
-        if(value == -1 && music_Player.volume >= 0.1) {
+    if (value != 0) {
+        if (value == -1 && music_Player.volume >= 0.1) {
             music_Player.volume -= 0.1; 
         } 
-        else if(value == 1 && music_Player.volume < 1) {
+        else if (value == 1 && music_Player.volume < 1) {
             music_Player.volume += 0.1; 
         }
         music_Volume = music_Player.volume;
@@ -242,7 +262,7 @@ function Music_NextTrack(value) { // переключение треков
         music_Id = Music_IsRandom();
     } else {
         music_OldId = music_Id;
-        if(value < 0) {
+        if (value < 0) {
             music_Id = music_Id - 1 < 1 ?
                 music_Max : --music_Id;
         } else {
@@ -306,14 +326,14 @@ function Music_CreateAlbumsList() { // Создание "альбом-листа
     let music_AlbumsList = document.getElementById("music_albumlist");
     let message = "";
     for (let i = 1; i < Music_AlbumName.length; i++) {
-        if(i == Music_AlbumID) {
-            if(TopStatus == false) {
+        if (i == Music_AlbumID) {
+            if (TopStatus == false) {
                 message += `<option id=music_albumlist_${i} style="background:lime;" value="${i}" selected>${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
             } else {
                 message += `<option id=music_albumlist_${i} style="background:white;" value="${i}" selected>${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
             }
         } else {
-            if(TopStatus == false) {
+            if (TopStatus == false) {
                 message += `<option id=music_albumlist_${i} style="background:#b3cccc;" value="${i}">${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
             } else {
                 message += `<option id=music_albumlist_${i} style="background:grey;" value="${i}">${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
@@ -329,20 +349,20 @@ function Music_CreateTracksList() { // создание "плей-листа"
     let message = "";
     for (let i = 1; i <= music_Max; i++) {
         if (i == music_Id) {
-            if(TopStatus == false) {
+            if (TopStatus == false) {
                 message += `<option id=music_tracklist_${i} style="background:lime;" value="${i}" selected>${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             } else {
                 message += `<option id=music_tracklist_${i} style="background:white;" value="${i}" selected>${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             }
         }
         else if (Music_RandomFileName.indexOf(Music_FileName[Music_AlbumID][i]) == -1) {
-            if(TopStatus == false) {
+            if (TopStatus == false) {
                 message += `<option id=music_tracklist_${i} style="background:red" value="${i}" >${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             } else {
                 message += `<option id=music_tracklist_${i} style="background:#383838" value="${i}" >${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             }
         } else {
-            if(TopStatus == false) {
+            if (TopStatus == false) {
                 message += `<option id=music_tracklist_${i} style="background:#b3cccc;" value="${i}">${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
             } else {
                 message += `<option id=music_tracklist_${i} style="background:grey;" value="${i}">${i}. ${Music_FileName[Music_AlbumID][i]} </option>`;
@@ -358,15 +378,15 @@ function Music_TrackListSelectColor() { // цвет фона "плей-лист�
     music_TrackList.options[music_Id-1].selected = true;
     music_TrackList.options[music_Id-1].style.background = TopStatus == false ? "lime" : "white";
 
-    if(music_OldId > 0) {
-        if(TopStatus == false) {
-            if(music_OnRandom == true) {
+    if (music_OldId > 0) {
+        if (TopStatus == false) {
+            if (music_OnRandom == true) {
                 music_TrackList.options[music_OldId-1].style.background = "red";
             } else {
                 music_TrackList.options[music_OldId-1].style.background = "#b3cccc";
             }
         } else {
-            if(music_OnRandom == true) {
+            if (music_OnRandom == true) {
                 music_TrackList.options[music_OldId-1].style.background = "#383838";
             } else {
                 music_TrackList.options[music_OldId-1].style.background = "grey";
@@ -403,7 +423,7 @@ function Music_SelectAlbum() { // выбрать трек из "альбом-л�
     if (music_OnRandom == true) return Music_AlbumListSetSelection();
     let music_AlbumList = document.getElementById("music_albumlist");
     let music_SelectAlbum = +music_AlbumList.options[music_AlbumList.selectedIndex].value;
-    if(Music_AlbumID == music_SelectAlbum) return true;
+    if (Music_AlbumID == music_SelectAlbum) return true;
     Music_AlbumID = music_SelectAlbum;
     music_Id = 1;
     music_Max = Music_FileName[Music_AlbumID].length - 1;
@@ -420,7 +440,7 @@ function Music_SelectTrack() { // выбрать трек из "плей-лис�
     if (music_OnRandom == true) return Music_TrackListSetSelection();
     let music_TrackList = document.getElementById("music_tracklist");
     let music_SelectTrack = +music_TrackList.options[music_TrackList.selectedIndex].value;
-    if(music_Id == music_SelectTrack) return true;
+    if (music_Id == music_SelectTrack) return true;
     music_OldId = music_Id;
     music_Id = music_SelectTrack;
     music_SelectTrackTime = null;
@@ -502,7 +522,7 @@ function Music_AudioStatus() { // CallBack проирывателя
     if (music_Player.paused == true && music_Play == true) {
         music_Player.play();
     }
-    if(music_Player.duration >= 0) {
+    if (music_Player.duration >= 0) {
         music_Time.innerText = `${Music_ConvertTime(music_Player.currentTime)} / ${Music_ConvertTime(music_Player.duration)}`;
         music_progress.value = music_Player.currentTime;
         music_progress.max = music_Player.duration;

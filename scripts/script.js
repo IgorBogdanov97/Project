@@ -244,4 +244,3 @@ function AgeText(value) {
     else if (value >= 2 && value <= 4) return "года";
     else return "лет";
 }
-

@@ -163,6 +163,6 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
         margin-left: 100px;
     }
     #music_time {
-        font-size: 50%;
+        font-size: 10%;
     }
 }

@@ -158,10 +158,8 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 @media screen and (max-width: 980px) {
-    .music-panel {
-        margin: 1%;
-    }
-    #music_time {
-        font-size: 50%;
+    #music-panel {
+        margin: 15px auto;
+        margin-left: 100px;
     }
 }

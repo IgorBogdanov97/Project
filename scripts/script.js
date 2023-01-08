@@ -171,7 +171,7 @@ function SelectTopic(value=!TopStatus) {
 }
 
 function onmousebutton_navid(id, value) {
-    let elem = document.getElementById(id);
+    let elem = document.getElementById(`${id}`);
     if (value == false) {
         elem.style.background = TopStatus == false ? 
             "#178282" : "#2c2c2c";

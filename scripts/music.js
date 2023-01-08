@@ -560,9 +560,11 @@ document.onclick = function(e) { // кликабельная область пр
     if (!e) { 
         e = window.event; 
     }
-    let Xmix = 560, Xmax = Xmix + 400; 
-    let Ymin = 3921, Ymax = Ymin + 20;
+    let Xmix = 560, Xmax; 
+    let Ymin = 3921, Ymax;
     if(window.matchMedia("only screen and (max-width: 980px)").matches) {
+        Xmix = 328;
+        Ymin = 4267;
     }
     Xmax = Xmix + 400;
     Ymax = Ymin + 20;

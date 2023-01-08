@@ -568,7 +568,7 @@ document.onclick = function(e) { // кликабельная область пр
     }
     Xmax = Xmix + 400;
     Ymax = Ymin + 20;
-    alert(`X: ${getX(e)}, Y: ${getY(e)}`);
+    //alert(`X: ${getX(e)}, Y: ${getY(e)}`);
     console.log(`X: ${getX(e)}, Y: ${getY(e)}`);
     if ( getX(e) >= Xmix && getX(e) <= Xmax && getY(e) >= Ymin && getY(e) <= Ymax ) {
         let value = ( getX(e) - Xmix ) / ( ( Xmax - Xmix ) / 100 );

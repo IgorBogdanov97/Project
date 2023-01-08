@@ -272,14 +272,14 @@ footer {
 		font-size: 50%;
 	}
 
-	#music_figcaption, #video_text, #music_player_text_player, #music_sound_text, #music_speed_text {
-		font-size: 100%
-	}
-
 	blockquote {
 		font-size: 50%;
 		margin-left: 20%;
 		padding-bottom: 15px;
+	}
+	
+	#music_figcaption, #video_text, #music_player_text_player, #music_sound_text, #music_speed_text {
+		font-size: 100%
 	}
 
 	#music-panel {

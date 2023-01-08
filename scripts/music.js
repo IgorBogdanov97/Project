@@ -242,7 +242,7 @@ function Music_PauseTrack() { // запуск/остановка проигры�
     let music_Pause = document.getElementById("music_pause");
 
     if (music_Player.paused == false) {
-        music_Pause.innerText= "Старт";
+        music_Pause.innerText = "Старт";
         music_Pause.style.color = "lime";
         music_Player.pause();
     } else {
@@ -529,6 +529,25 @@ function Music_AudioStatus() { // CallBack проирывателя
     return;
 }
 
+/*
+function Music_PauseTrack() { // запуск/остановка проигрывателя
+    let music_Player = document.getElementById("music_player");
+    let music_Pause = document.getElementById("music_pause");
+
+    if (music_Player.paused == false) {
+        music_Pause.innerText = "Старт";
+        music_Pause.style.color = "lime";
+        music_Player.pause();
+    } else {
+        music_Pause.innerText = "Пауза";
+        music_Pause.style.color = "red";
+        music_Player.play();
+    }
+    music_Play = !music_Play;
+    return;
+}
+*/
+
 document.addEventListener('keydown', function(event) { // реакция на нажатие кнопок
     switch(event.code) {
         case "MediaTrackPrevious": {
@@ -539,16 +558,16 @@ document.addEventListener('keydown', function(event) { // реакция на н
             Music_NextTrack(+1);
             break;
         }
-        case "MediaPlayPause": {  
+        case "MediaPlayPause": {
             let music_Player = document.getElementById("music_player");
             let music_Pause = document.getElementById("music_pause");
             music_Play = music_Player.paused;
-            if (music_Player.paused) {
-                music_Pause.value = "Пауза";
-                music_Pause.style.color = "red";
-            } else {
-                music_Pause.value = "Старт";
+            if (music_Player.paused == false) {
+                music_Pause.innerText = "Старт";
                 music_Pause.style.color = "lime";
+            } else {
+                music_Pause.innerText = "Пауза";
+                music_Pause.style.color = "red";
             }
             break;
         }
@@ -561,7 +580,7 @@ document.onclick = function(e) { // кликабельная область пр
         e = window.event; 
     }
     let X1 = 559, X2 = 960; // 
-    let Y1 = 3905, Y2 = Y1 + 20; // Y1 - верх
+    let Y1 = 3921, Y2 = Y1 + 20; // Y1 - верх
     console.log(`X: ${getX(e)}, Y: ${getY(e)}`);
     if ( getX(e) >= X1 && getX(e) <= X2 && getY(e) >= Y1 && getY(e) <= Y2 ) {
         let value = ( getX(e) - X1 ) / ( ( X2 - X1 ) / 100 );

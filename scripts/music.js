@@ -529,25 +529,6 @@ function Music_AudioStatus() { // CallBack проирывателя
     return;
 }
 
-/*
-function Music_PauseTrack() { // запуск/остановка проигрывателя
-    let music_Player = document.getElementById("music_player");
-    let music_Pause = document.getElementById("music_pause");
-
-    if (music_Player.paused == false) {
-        music_Pause.innerText = "Старт";
-        music_Pause.style.color = "lime";
-        music_Player.pause();
-    } else {
-        music_Pause.innerText = "Пауза";
-        music_Pause.style.color = "red";
-        music_Player.play();
-    }
-    music_Play = !music_Play;
-    return;
-}
-*/
-
 document.addEventListener('keydown', function(event) { // реакция на нажатие кнопок
     switch(event.code) {
         case "MediaTrackPrevious": {
@@ -579,11 +560,16 @@ document.onclick = function(e) { // кликабельная область пр
     if (!e) { 
         e = window.event; 
     }
-    let X1 = 559, X2 = 960; // 
-    let Y1 = 3921, Y2 = Y1 + 20; // Y1 - верх
+    let Xmix = 560, Xmax = Xmix + 400; 
+    let Ymin = 3921, Ymax = Ymin + 20;
+    if(window.matchMedia("only screen and (max-width: 980px)").matches) {
+    }
+    Xmax = Xmix + 400;
+    Ymax = Ymin + 20;
+    alert(`X: ${getX(e)}, Y: ${getY(e)}`);
     console.log(`X: ${getX(e)}, Y: ${getY(e)}`);
-    if ( getX(e) >= X1 && getX(e) <= X2 && getY(e) >= Y1 && getY(e) <= Y2 ) {
-        let value = ( getX(e) - X1 ) / ( ( X2 - X1 ) / 100 );
+    if ( getX(e) >= Xmix && getX(e) <= Xmax && getY(e) >= Ymin && getY(e) <= Ymax ) {
+        let value = ( getX(e) - Xmix ) / ( ( Xmax - Xmix ) / 100 );
         let music_Player = document.getElementById("music_player");
         music_Player.currentTime = music_Player.duration / 100 * value;
     }

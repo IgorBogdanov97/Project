@@ -117,7 +117,8 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 .music_volume {
-    padding: 1px 48px;
+    font-size: 100%;
+    padding: 10px 87px;
     background: #96acac;
 }
 
@@ -126,14 +127,16 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 #music_nexttrack, #music_previoustrack {
-    padding: 1px 20px;
+    font-size: 100%;
+    padding: 10px 60px;
     font-style: oblique;
     background: #96acac;
 }
 
 #music_pause {
+    font-size: 100%;
     color: #ff0000e6;
-    padding: 1px 40px;
+    padding: 10px 65px;
     font-style: oblique;
     background: #96acac;
     text-shadow: 1px 1px 2px black;
@@ -149,12 +152,18 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 .music_currenttime, .music_playbackrate {
-    padding: 1px 14px;
+    font-size: 100%;
+    padding: 10px 41px;
     background: #96acac;
 }
 
 #music_volume, #music_playbackrate {
+    font-size: 100%;
     color: lime;
+}
+
+.music_speed {
+    font-size: 110%;
 }
 
 @media screen and (max-width: 980px) {

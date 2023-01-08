@@ -265,13 +265,13 @@ footer {
 		font-size: 100%;
 	}
 	figcaption, .mem_text, p.text_w_shadow_b, blockquote, dfn, span.text_w_shadow_b {
-		font-size: 50%;
+		font-size: 100%;
 	}
 	blockquote dfn {
 		font-size: 100%;
 	}
 	blockquote {
-		margin-left: 10%;
+		margin-left: 20%;
 		padding-bottom: 15px;
 	}
  	

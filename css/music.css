@@ -171,10 +171,7 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
         margin: 15px auto;
         margin-left: 100px;
     }
-    #music_time, #music_number, #music_message {
-        font-size: 10%;
-    }
-    address, #copyright {
+    #music_time, #music_number, #music_message, address, #copyright {
         font-size: 50%;
     }
 }

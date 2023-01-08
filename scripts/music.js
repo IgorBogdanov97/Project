@@ -564,7 +564,7 @@ document.onclick = function(e) { // кликабельная область пр
     let Ymin = 3921, Ymax;
     if(window.matchMedia("only screen and (max-width: 980px)").matches) {
         Xmix = 328;
-        Ymin = 4267;
+        Ymin = 4172;
     }
     Xmax = Xmix + 400;
     Ymax = Ymin + 20;

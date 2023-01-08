@@ -138,12 +138,12 @@
 						</div>	
 						<div class="music_section_volume">
 							<input id="music_minus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_minus', true)" onmouseout="onmousebutton_music('music_minus', false)" onclick="Music_Volume(-1)" value="-">
-							<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Volume(0)"><span class="text_w_shadow_b"><span>Звук: <span id="music_volume">100</span></span></button>
+							<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Volume(0)"><span id="music_sound_text" class="text_w_shadow_b">Звук: <span id="music_volume">100</span></span></button>
 							<input id="music_plus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_plus', true)" onmouseout="onmousebutton_music('music_plus', false)" onclick="Music_Volume(1)" value="+">
 						</div>
 						<input id="music_currenttime_-5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_-5second', true)" onmouseout="onmousebutton_music('music_currenttime_-5second', false)" onclick="Music_CurrentTime(false)" value="-5 секунд">
 						<input id="music_playbackrate-" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate-', true)" onmouseout="onmousebutton_music('music_playbackrate-', false)" onclick="Music_PlayBackRate(false)" value="-">
-						<span class="text_w_shadow_b"><span class="music_speed">Ускорение:</span> <span id="music_playbackrate">1.0</span> 
+						<span class="text_w_shadow_b"><span id="music_speed_text">Ускорение:</span> <span id="music_playbackrate">1.0</span> 
 						<input id="music_playbackrate+" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate+', true)" onmouseout="onmousebutton_music('music_playbackrate+', false)" onclick="Music_PlayBackRate(true)" value="+">
 						<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(true)" value="+5 секунд">
 					</div>

@@ -157,13 +157,14 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     background: #96acac;
 }
 
+#music_speed_text {
+    font-weight:bold;
+    font-size: 100%;
+}
+
 #music_volume, #music_playbackrate {
     font-size: 100%;
     color: lime;
-}
-
-.music_speed {
-    font-size: 110%;
 }
 
 @media screen and (max-width: 980px) {
@@ -173,5 +174,14 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     }
     #music_time, #music_number, #music_message, address, #copyright {
         font-size: 50%;
+    }
+    #music_sound_text {
+        font-size: 100%;
+    }
+    #music_speed_text {
+        font-size: 200%;
+    }
+    .music_currenttime, .music_playbackrate {
+        padding: 10px 48px;
     }
 }

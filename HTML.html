@@ -95,7 +95,7 @@
 				<a href="https://ru.wikipedia.org/wiki/Фреско,_Жак" title="Биография Жака Фреско" target="_blank"><i>- Жак Фреско ©</i></a>
 			</blockquote>
 			<blockquote>
-				<dfn id="video_text" class="text_b_shadow_w">Видео</dfn> — электронная технология формирования, записи, обработки, передачи, хранения и
+				<dfn class="text_b_shadow_w">Видео</dfn> — электронная технология формирования, записи, обработки, передачи, хранения и <!--id="video_text"-->
 				<br>
 				воспроизведения подвижного изображения, основанная на принципах телевидения, а также
 				<br>
@@ -104,18 +104,18 @@
 			<div>
 				<video id="video_gameextream" src="./video/GameExtream-RPG [RUS].mp4" title="Видеообзор SAMP сервера, проекта GameExtream-RPG" poster="./images/screensaver_video_gameextream.jpg" controls></video>
 			</div>
-			<p id="video_text_samp" class="text_w_shadow_b center">Видеообзор SAMP сервера, проекта <a href="https://vk.com/gameextream" title="Группа vk.com GameExtream-RPG" target="_blank"><cite>GameExtream-RPG</cite></a>.</p>
+			<p class="text_w_shadow_b center">Видеообзор SAMP сервера, проекта <a href="https://vk.com/gameextream" title="Группа vk.com GameExtream-RPG" target="_blank"><cite>GameExtream-RPG</cite></a>.</p> <!--id="video_text_samp"-->
 			<p class="center"><dfn class="text_b_shadow_w">Аудио</dfn> <span class="text_w_shadow_b">— это общий термин, относящийся к звуковым технологиям.</span></p>
 			<div id="music-panel" class="notselection">
 				<figure class="music_img">
 					<a id="music_photo_href" target="_blank"><img id="music_image"></a>
-					<figcaption id="music_figcaption" class="text_w_shadow_b">
+					<figcaption class="text_w_shadow_b"> <!--id="music_figcaption"-->
 						Исполнитель <a id="music_executor" target="_blank"></a> - обложка музыкального альбома<br><a id="music_album_href" target="_blank"><cite id="music_namealbum"></cite></a>.
 					</figcaption>
 				</figure>
 				<audio id="music_player" type="audio/wav"></audio>
 				<div>
-					<span id="music_player_text_player" class="text_w_shadow_b music-player-text">Проигрыватель</span>
+					<span class="text_w_shadow_b music-player-text">Проигрыватель</span> <!--id="music_player_text_player"-->
 					<progress id="music_progress" class="music_day_1 music_day_2 music_day_3"></progress>
 					<div class="music_interface">
 						<div id="music_time"></div>
@@ -138,12 +138,12 @@
 						</div>	
 						<div class="music_section_volume">
 							<input id="music_minus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_minus', true)" onmouseout="onmousebutton_music('music_minus', false)" onclick="Music_Volume(-1)" value="-">
-							<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Volume(0)"><span id="music_sound_text" class="text_w_shadow_b">Звук: <span id="music_volume">100</span></span></button>
+							<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Volume(0)"><span class="text_w_shadow_b">Звук: <span id="music_volume">100</span></span></button> <!--id="music_sound_text"-->
 							<input id="music_plus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_plus', true)" onmouseout="onmousebutton_music('music_plus', false)" onclick="Music_Volume(1)" value="+">
 						</div>
 						<input id="music_currenttime_-5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_-5second', true)" onmouseout="onmousebutton_music('music_currenttime_-5second', false)" onclick="Music_CurrentTime(false)" value="-5 секунд">
 						<input id="music_playbackrate-" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate-', true)" onmouseout="onmousebutton_music('music_playbackrate-', false)" onclick="Music_PlayBackRate(false)" value="-">
-						<span id="music_speed_text" class="text_w_shadow_b">Ускорение: <span id="music_playbackrate">1.0</span> 
+						<span class="text_w_shadow_b">Ускорение: <span id="music_playbackrate">1.0</span> <!--id="music_speed_text"-->
 						<input id="music_playbackrate+" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate+', true)" onmouseout="onmousebutton_music('music_playbackrate+', false)" onclick="Music_PlayBackRate(true)" value="+">
 						<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(true)" value="+5 секунд">
 					</div>

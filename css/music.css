@@ -157,10 +157,10 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     background: #96acac;
 }
 
-#music_speed_text {
-    font-weight:bold;
+/*#music_speed_text {
+    font-weight: bold;
     font-size: 100%;
-}
+}*/
 
 #music_volume, #music_playbackrate {
     font-size: 100%;

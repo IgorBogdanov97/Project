@@ -272,6 +272,7 @@ footer {
 		margin-left: -15%;
 	}
 	blockquote {
+		font-size: 50%;
 		margin-left: 20%;
 		padding-bottom: 15px;
 	}
@@ -280,7 +281,10 @@ footer {
 		left: -270px;
 		float: left;
     }
-	/*.mem_text, figcaption, dfn, span.text_w_shadow_b, #video_text_samp, address, #copyright {
+	#video_text_samp, address, #copyright {
+		font-size: 50%;
+	}
+	/*.mem_text, figcaption, dfn, span.text_w_shadow_b {
 		font-size: 50%;
 	}
 	#music_figcaption, #video_text, #music_player_text_player, #music_sound_text, #music_speed_text {

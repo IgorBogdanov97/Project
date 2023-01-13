@@ -127,7 +127,7 @@ let music_OnRandom = false;
 let music_Id = Music_RandomTreck();
 let music_OldId = 0;
 let music_Play = true;
-let music_Muted = false; // false
+let music_Muted = false;
 let music_Volume = 1;
 let music_PlayBackRate = 1;
 let music_SelectTrackTime = null;
@@ -593,6 +593,7 @@ document.onclick = function(e) { // кликабельная область пр
 Age();
 SelectTopic();
 Music_Treck();
+Music_Volume(0);
 Music_ShowAlbumImage();
 Music_CreateAlbumsList();	
 Music_CreateTracksList();

@@ -199,7 +199,7 @@ table.table_1 caption {
 }
 
 table.table_1 {
-	width: 31%; 
+	width: 35%; /*31*/
 	margin: auto;
 	font-size: 105%;
 	font-style: oblique;
@@ -226,7 +226,7 @@ table.table_1 th {
 }
 
 table.table_1_1 tr:nth-child(even) {
-	background: #b3cccc; 
+	background: #b3cccc;
 }
 
 table.table_1_2 tr:nth-child(even) {
@@ -284,11 +284,4 @@ footer {
 	#video_text_samp, address, #copyright {
 		font-size: 50%;
 	}
-	/*.mem_text, figcaption, dfn, span.text_w_shadow_b {
-		font-size: 50%;
-	}
-	#music_figcaption, #video_text, #music_player_text_player, #music_sound_text, #music_speed_text {
-		font-size: 100%
-	}
-	*/
 }

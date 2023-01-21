@@ -32,14 +32,14 @@ let headerTextID = 1;
 setInterval(HatColor,  500);
 function HatColor() {
     let changecolor = TopStatus == false ?
-        ["", "white", "yellow", "red", "black", "#61a4ad", "pink", "green", "cyan", ""] :
-        ["white", "grey", "white", "grey", "white", "grey", "white", "grey", "white", "grey"];
+        ["", "white", "olive", "yellow", "red", "black", "chocolate", "pink", "green", "cyan", "mediumvioletred", "brown", ""] :
+        ["white", "grey", "white", "grey", "white", "grey", "white", "grey", "white", "grey", "white", "grey", "white"];
     document.getElementById(`header_${headerTextID}`).style.color = changecolor[headerColor];
 
-    if (headerTextID == 7) {
-       headerColor = headerColor <= 8 ? ++headerColor : 1;
+    if (headerTextID == 11) {
+       headerColor = headerColor <= 12 ? ++headerColor : 1;
     }
-    headerTextID = headerTextID < 7 ? ++headerTextID : 1;
+    headerTextID = headerTextID < 11 ? ++headerTextID : 1;
     return;
 }
 
@@ -73,13 +73,11 @@ function SelectTopic(value=!TopStatus) {
     }
     if (value == false) {
         document.body.style.background = "";
-        for (let i = 1; i < 15; i++) {
+        for (let i = 1; i < 18; i++) {
             if (i < 15) {
                 document.getElementById(`logo_${i}`).style.color = "";
             }
-            if (i < 14) { 
-                document.getElementById(`navid_${i}`).style.background = "";
-            }
+            document.getElementById(`navid_${i}`).style.background = "";
         }
         document.getElementById("main_photo").style = "";
         document.getElementById("main_photo").style.opacity = "1";
@@ -111,6 +109,7 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_plus").style.background = "";
         document.getElementById("music_currenttime_-5second").style.background = "";
         document.getElementById("music_playbackrate-").style.background = "";
+        document.getElementById("music_speedtext").style.background = "";
         document.getElementById("music_playbackrate+").style.background = "";
         document.getElementById("music_currenttime_+5second").style.background = "";
         document.getElementById("matetial_learn_1").style = "background:#1aa1a1;color:black;";
@@ -118,16 +117,14 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("copyright").style.color = "black";
     } else {
         document.body.style.background = "#383838";
-        for (let i = 1; i <= 15; i++) {
+        for (let i = 1; i < 18; i++) {
             if (i < 15) {
                 document.getElementById(`logo_${i}`).style.color = "#505050";
             }
-            if (i < 14) { 
-                document.getElementById(`navid_${i}`).style.background = "#2c2c2c";
-            }
-            if (i < 8) {
+            if (i < 12) {
                 document.getElementById(`header_${i}`).style.color = "grey";
             }
+            document.getElementById(`navid_${i}`).style.background = "#2c2c2c";
         }
         document.getElementById("main_photo").style = "outline:#2c2c2c solid 4px;opacity:0.5;";
         document.getElementById("table_1_cool_1").style.background = "#383838";
@@ -159,6 +156,7 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_plus").style.background = "#383838";
         document.getElementById("music_currenttime_-5second").style.background = "#383838";
         document.getElementById("music_playbackrate-").style.background = "#383838";
+        document.getElementById("music_speedtext").style.background = "#383838";
         document.getElementById("music_playbackrate+").style.background = "#383838";
         document.getElementById("music_currenttime_+5second").style.background = "#383838";
         document.getElementById("matetial_learn_1").style = "background:#383838;color:white;";

@@ -1,9 +1,10 @@
 #music-panel {
+    margin: 15px 400px;
     border-radius: 10%;
     text-align: center;
     background: #178282;
     outline: black solid 1px;
-    margin: 15px 400px;
+    box-shadow: 0px 0px 15px white;
 }
 
 img#music_image {
@@ -11,6 +12,7 @@ img#music_image {
 	height: 400px;
 	margin-bottom: 10px;
 	outline: #178282 solid 4px;
+    box-shadow: 0px 0px 15px white;
 }
 
 #music_executor {
@@ -24,10 +26,10 @@ figure.music_img {
 progress#music_progress.music_day_1 {
     border: 0;
     padding: 0;
-    height: 20px;
-    width: 400px;
+    height: 25px;
+    width: 600px;
     display: block;
-    overflow:hidden;
+    overflow: hidden;
     margin: 10px auto;
     text-align: center;
     background: #fff;
@@ -49,8 +51,8 @@ progress#music_progress.music_day_3::-webkit-progress-value { /* фон запо
 progress#music_progress.music_night_1 {
     border: 0;
     padding: 0;
-    height: 20px;
-    width: 400px;
+    height: 25px;
+    width: 600px;
     display: block;
     overflow: hidden;
     margin: 10px auto;
@@ -72,7 +74,7 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 .music_interface {
-    top: -28px;
+    top: -30.5px;
     position: relative;
 }
 
@@ -98,8 +100,10 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     text-shadow: 1px 1px 1px black;
 }
 
-.music_text_center {
-    text-align: center;
+.music_text_left {
+
+    padding-left: 30px;
+    text-align: left;
 }
 
 #music_albumselect, #music_select {
@@ -117,8 +121,9 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 .music_volume {
+    width: 30%;
     font-size: 100%;
-    padding: 10px 87px;
+    padding: 10px 0;
     background: #96acac;
 }
 
@@ -127,16 +132,18 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 #music_nexttrack, #music_previoustrack {
+    width: 30%;
     font-size: 100%;
-    padding: 10px 60px;
+    padding: 10px 0;
     font-style: oblique;
     background: #96acac;
 }
 
 #music_pause {
+    width: 30%;
     font-size: 100%;
     color: #ff0000e6;
-    padding: 10px 65px;
+    padding: 10px 0;
     font-style: oblique;
     background: #96acac;
     text-shadow: 1px 1px 2px black;
@@ -151,16 +158,13 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
     src: "/images/music_random_image.png";
 }
 
-.music_currenttime, .music_playbackrate {
+.music_currenttime, .music_playbackrate, .music_textblock {
+    min-width: 17.75%;
+    padding: 10px 0;
     font-size: 100%;
-    padding: 10px 41px;
+    display: inline-block;    
     background: #96acac;
 }
-
-/*#music_speed_text {
-    font-weight: bold;
-    font-size: 100%;
-}*/
 
 #music_volume, #music_playbackrate {
     font-size: 100%;

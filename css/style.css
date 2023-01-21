@@ -1,6 +1,10 @@
 body {
-	margin-top: 0;
+	margin: 0;
 	background: #61a4ad;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 video {
@@ -9,6 +13,7 @@ video {
 	height: 400px;
 	display: block;
 	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 10px white;
 }
 
 address {
@@ -39,6 +44,7 @@ img#main_photo {
 	height: 500px;
 	border-radius: 5%;
 	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 20px white;
 }
 
 img.image_Jim_Carrey {
@@ -46,6 +52,7 @@ img.image_Jim_Carrey {
 	height: 200px;
 	border-radius: 5%;
 	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 10px white;
 }
 
 img.gadgetsandcoffee {
@@ -53,6 +60,7 @@ img.gadgetsandcoffee {
 	height: 380px;
 	border-radius: 5%;
 	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 10px white;
 }
 
 p.mem_text {
@@ -67,7 +75,7 @@ span.smile_size {
 
 blockquote {
 	color:white;
-	margin-left: 450px;
+	text-align: center;
 	text-shadow: 1px 1px 2px black;
 }
 
@@ -125,32 +133,29 @@ a:focus {
 	text-align: center;
 	font-family: cursive;
 	background: #ffffff5b;
-	margin: 0 calc(-25vw + 25%);
 	text-shadow: 3px 3px 4px black;
 }
 
-nav { /* задаем цвет фона для контейнера nav. */
+nav {
 	top: 0;	
 	z-index: 1;
 	opacity: 0.9;
 	position: sticky;
 	background-color: #178282;
-	margin: 0 calc(-25vw + 25%);
 }
 
-nav ul { /* убираем отступы и поля, а также list-style для "ul", и добавляем "position:relative" */
+nav ul {
 	margin: 0;
 	padding-left: 50px;
 	list-style: none;
 }
 
-nav ul li { /* применяем inline-block позиционирование к элементам навигации */
-	width: 14.05%;
+nav ul li {
 	display: inline-block;
 	background-color: #178282;
 }
 
-nav a { /* стилизуем ссылки */
+nav a {
 	display: block;
 	padding: 0 10px;
 	line-height: 60px;
@@ -161,17 +166,21 @@ nav a { /* стилизуем ссылки */
 	text-shadow: 1px 1px 2px black;
 }
 
-nav ul ul { /* скрываем выпадающие списки по умолчанию и задаем абсолютное позиционирование */
+nav a:hover {
+	font-size: 175%;
+}
+
+nav ul ul {
 	display: none;
 	position: absolute;
 }
 
-nav ul li:hover > ul { /* отображаем выпадающий список при наведении */
+nav ul li:hover > ul {
 	margin-left: -50px;
 	display: inherit;
 }
 
-nav ul ul li { /* первый уровень выпадающего списка */
+nav ul ul li {
 	min-width: 205px;
 	display: list-item;
 }
@@ -179,16 +188,19 @@ nav ul ul li { /* первый уровень выпадающего списк�
 input#matetial_learn_1, input#matetial_learn_2  {
 	background: #1aa1a1;
 	border: 2px solid black;
+	box-shadow: 0px 0px 5px white;
 }
 
 input#button_topic {
 	color: black;
 	background: white;
+	box-shadow: 0px 0px 5px white;
 }
 
 table.table_1, table.table_1 th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
+	box-shadow: 0px 0px 5px white;
 }
 
 table.table_1 caption {
@@ -209,6 +221,7 @@ table.table_1 {
 table.table_1 col:nth-child(1) {
 	background:#178282;
 }
+
 table.table_1 col:nth-child(2) {
 	background:#50b4b4
 }
@@ -250,38 +263,45 @@ footer {
 	font-style: italic;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 1281px) {
+	#music-panel {
+		margin: 15px 400px;
+		border-radius: 10%;
+		text-align: center;
+		background: #178282;
+		outline: black solid 1px;
+		box-shadow: 0px 0px 15px white;
+	}
+}
+
+@media screen and (max-width: 1280px) {
 	.logo_type {
 		padding: 10px;
-		margin: 0 calc(-10vw + 0%);
 	}
 	nav {
-		float: left;
 		width: 25%;
 	}
 	nav ul {
-		padding-left: 0px;
+		padding-left: 5px;
 	}
 	nav ul li {
 		width: 100%;
 	}
+	nav ul li:hover > ul {
+		top: 60px;
+		margin-left: 301.5px;
+		display: inherit;
+	}
 	nav a {
-		font-size: 200%;
-	}
-	#main_photo {
-		margin-left: -15%;
-	}
-	blockquote {
-		font-size: 50%;
-		margin-left: 20%;
-		padding-bottom: 15px;
+		font-size: 150%;
 	}
 	#music-panel {
 		position: relative;
-		left: -270px;
 		float: left;
-    }
-	#video_text_samp, address, #copyright {
-		font-size: 50%;
+		left: -25vw;
 	}
 }
+@media screen and (max-width: 800px) { nav ul li { font-size: 95%; } }
+@media screen and (max-width: 750px) { nav ul li { font-size: 90%; } }
+@media screen and (max-width: 700px) { nav ul li { font-size: 85%; } }
+@media screen and (max-width: 650px) { nav ul li { font-size: 80%; } }

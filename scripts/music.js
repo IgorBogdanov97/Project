@@ -13,7 +13,8 @@ const Music_AlbumName = [ // название альбома
     "Sense of Human",
     "Геометрия тьмы",
     "ДЕПРЕССИИ НЕ СУЩЕСТВУЕТ",
-    "ДЕПРЕССИЯ СУЩЕСТВУЕТ"
+    "ДЕПРЕССИЯ СУЩЕСТВУЕТ",
+    "Случайный альбом"
 ];
 
 const Music_AlbumYear = [ // год альбома
@@ -332,10 +333,18 @@ function Music_CreateAlbumsList() { // Создание "альбом-листа
                 message += `<option id=music_albumlist_${i} style="background:white;" value="${i}" selected>${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
             }
         } else {
-            if (TopStatus == false) {
-                message += `<option id=music_albumlist_${i} style="background:#b3cccc;" value="${i}">${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
+            if(i == Music_AlbumName.length-1) {
+                if (TopStatus == false) {
+                    message += `<option id=music_albumlist_${i} style="background:#b3cccc;" value="${i}">${i}. Случайный альбом</option>`;
+                } else {
+                    message += `<option id=music_albumlist_${i} style="background:grey;" value="${i}">${i}. Случайный альбом</option>`;
+                }
             } else {
-                message += `<option id=music_albumlist_${i} style="background:grey;" value="${i}">${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
+                if (TopStatus == false) {
+                    message += `<option id=music_albumlist_${i} style="background:#b3cccc;" value="${i}">${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
+                } else {
+                    message += `<option id=music_albumlist_${i} style="background:grey;" value="${i}">${i}. ${Music_AlbumArtist[i]} - "${Music_AlbumName[i]}" (${Music_AlbumYear[i]})</option>`;
+                }
             }
         }
     }
@@ -423,6 +432,9 @@ function Music_SelectAlbum() { // выбрать трек из "альбом-л�
     let music_AlbumList = document.getElementById("music_albumlist");
     let music_SelectAlbum = +music_AlbumList.options[music_AlbumList.selectedIndex].value;
     if (Music_AlbumID == music_SelectAlbum) return true;
+    if(music_SelectAlbum == Music_AlbumName.length-1) {
+        music_SelectAlbum = Music_RandomAlbumID();
+    }
     Music_AlbumID = music_SelectAlbum;
     music_Id = 1;
     music_Max = Music_FileName[Music_AlbumID].length - 1;
@@ -457,6 +469,9 @@ function Music_PlayBackRate(value) { // изменение скорости тр
     }
     else if (value == true && music_PlayBackRate < 2.0){
         music_PlayBackRate += 0.05;
+    }
+    else if (value == "reset") {
+        music_PlayBackRate = 1.0;
     }
     music_Player.playbackRate = music_PlayBackRate;
     music_Playbackrate.innerText = music_PlayBackRate.toFixed(2);
@@ -560,14 +575,14 @@ document.onclick = function(e) { // кликабельная область пр
     if (!e) { 
         e = window.event; 
     }
-    let Xmix = 560, Xmax; 
-    let Ymin = 3921, Ymax;
+    let Xmix = 460, Xmax; 
+    let Ymin = 3811, Ymax;
     if(window.matchMedia("only screen and (max-width: 980px)").matches) {
         Xmix = 328;
         Ymin = 4266;
     }
-    Xmax = Xmix + 400;
-    Ymax = Ymin + 20;
+    Xmax = Xmix + 600;
+    Ymax = Ymin + 27;
     //alert(`X: ${getX(e)}, Y: ${getY(e)}`);
     console.log(`X: ${getX(e)}, Y: ${getY(e)}`);
     if ( getX(e) >= Xmix && getX(e) <= Xmax && getY(e) >= Ymin && getY(e) <= Ymax ) {

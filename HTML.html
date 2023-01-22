@@ -125,16 +125,15 @@
 				<div class="music_interface">
 					<span id="music_time"></span>
 					<p class="music_player_text_track"><span id="music_number"></span> <span id="music_message"></span></p>
-					<form class="music_text_left">
+					<form class="center">
 						<label class="text_w_shadow_b">Альбомы:</label>
-						<select id="music_albumlist" style="width:450px;"></select>
-						<input id="music_albumselect" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_albumselect', true)" onmouseout="onmousebutton_music('music_albumselect',false)" value="Выбрать" onClick="Music_SelectAlbum()">
+						<select id="music_albumlist" style="width:70%;" onchange="Music_SelectAlbum(1)"></select>
+						<img id="music_random_album" src="./images/music_random_image.png" onclick="Music_SelectAlbum(2)" title="Случайный альбом">
 					</form>
-					<form class="music_text_left">
-						<label class="text_w_shadow_b">Список:</label>
-						<select id="music_tracklist" style="width:465px;"></select>
-						<input id="music_select" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_select', true)" onmouseout="onmousebutton_music('music_select',false)" value="Выбрать" onClick="Music_SelectTrack()">
-						<img id="music_random" src="./images/music_random_image.png" onclick="Music_RandomTrack()" title="Случайный трек">
+					<form class="center">
+						<label class="text_w_shadow_b">Список:</label><span style="padding-left:13px;"></span>
+						<select id="music_tracklist" style="width:70%;" onchange="Music_SelectTrack()"></select>
+						<img id="music_random_track" src="./images/music_random_image.png" onclick="Music_RandomTrack()" title="Случайный трек">
 					</form>
 					<div class="music_nexttrack_section">
 						<input id="music_previoustrack" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_previoustrack', true)" onmouseout="onmousebutton_music('music_previoustrack',false)" onclick="Music_NextTrack(-1)" value="Предыдущий">

@@ -97,9 +97,7 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_progress").classList.add("music_day_2");
         document.getElementById("music_progress").classList.add("music_day_3");
         document.getElementById("music_albumlist").style.background = "";
-        document.getElementById("music_albumselect").style.background = "";
         document.getElementById("music_tracklist").style.background = "";
-        document.getElementById("music_select").style.background = "";
         document.getElementById("music_previoustrack").style.background = music_OnRandom == true ? 
             "#178282" : "";
         document.getElementById("music_pause").style.background = "";
@@ -143,9 +141,7 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_progress").classList.add("music_night_2");
         document.getElementById("music_progress").classList.add("music_night_3");
         document.getElementById("music_albumlist").style.background = "white";
-        document.getElementById("music_albumselect").style.background = "#383838";
         document.getElementById("music_tracklist").style.background = "white";
-        document.getElementById("music_select").style.background = "#383838";
         document.getElementById("music_previoustrack").style.background = 
             TopStatus == true && music_OnRandom == true ?
                 "black" : "#383838";

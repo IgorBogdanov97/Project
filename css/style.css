@@ -142,6 +142,7 @@ nav {
 	opacity: 0.9;
 	position: sticky;
 	background-color: #178282;
+	box-shadow: 0px 0px 10px white;
 }
 
 nav ul {
@@ -263,45 +264,29 @@ footer {
 	font-style: italic;
 }
 
-@media screen and (min-width: 1281px) {
-	#music-panel {
-		margin: 15px 400px;
-		border-radius: 10%;
-		text-align: center;
-		background: #178282;
-		outline: black solid 1px;
-		box-shadow: 0px 0px 15px white;
-	}
-}
 
 @media screen and (max-width: 1280px) {
-	.logo_type {
-		padding: 10px;
-	}
+	.logo_type { padding: 10px; }
 	nav {
-		width: 25%;
+		float: left;
+		width: 20%;
 	}
-	nav ul {
-		padding-left: 5px;
-	}
-	nav ul li {
-		width: 100%;
-	}
+	nav ul { padding-left: 5px; }
+	nav ul li { min-width: 190px; }
 	nav ul li:hover > ul {
 		top: 60px;
-		margin-left: 301.5px;
+		margin-left: 185px;
 		display: inherit;
 	}
-	nav a {
-		font-size: 150%;
+	nav a { font-size: 150%; }
+	figure, table.table_1 {
+		margin-right: 20%;
 	}
-	#music-panel {
-		position: relative;
-		float: left;
-		left: -25vw;
+	table.table_1 {
+		margin-left: 21%;
+		width: initial;
+	}
+	img#music_image {
+		max-width: 100%;
 	}
 }
-@media screen and (max-width: 800px) { nav ul li { font-size: 95%; } }
-@media screen and (max-width: 750px) { nav ul li { font-size: 90%; } }
-@media screen and (max-width: 700px) { nav ul li { font-size: 85%; } }
-@media screen and (max-width: 650px) { nav ul li { font-size: 80%; } }

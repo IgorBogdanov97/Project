@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="RU">
 	<head>
 		<title>BIM-Technology</title>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
 		<meta name="author" content="Игорь Богданов">
 		<link rel="icon" href="favicon-logo.ico">
 		<link rel="stylesheet" href="./css/style.css">
@@ -25,10 +25,10 @@
 						<li id="navid_8" onmouseover="onmousebutton_navid('navid_8', true)" onmouseout="onmousebutton_navid('navid_8',false)"><a href="https://join.skype.com/invite/mWhlfEEjHiYO">Skype</a></li>
 					</ul>
 				</li>
-				<li id="navid_9"><a id="header_3" onmouseover="onmousebutton_navid('navid_9', true)" onmouseout="onmousebutton_navid('navid_9',false)">Мем</a></li>
-				<li id="navid_10"><a id="header_4" onmouseover="onmousebutton_navid('navid_10', true)" onmouseout="onmousebutton_navid('navid_10',false)">Карта</a></li>
-				<li id="navid_11"><a id="header_5" onmouseover="onmousebutton_navid('navid_11', true)" onmouseout="onmousebutton_navid('navid_11',false)">Видео</a></li>
-				<li id="navid_12"><a id="header_6" onmouseover="onmousebutton_navid('navid_12', true)" onmouseout="onmousebutton_navid('navid_12',false)">Проигрыватель</a></li>
+				<li id="navid_9"><a id="header_3" href="#mem" target="_self" onmouseover="onmousebutton_navid('navid_9', true)" onmouseout="onmousebutton_navid('navid_9',false)">Мем</a></li>
+				<li id="navid_10"><a id="header_4" href="#gadget_sand_coffee" target="_self" onmouseover="onmousebutton_navid('navid_10', true)" onmouseout="onmousebutton_navid('navid_10',false)">Карта</a></li>
+				<li id="navid_11"><a id="header_5" href="#video_gameextream" target="_self" onmouseover="onmousebutton_navid('navid_11', true)" onmouseout="onmousebutton_navid('navid_11',false)">Видео</a></li>
+				<li id="navid_12"><a id="header_6" href="#music-panel" target="_self" onmouseover="onmousebutton_navid('navid_12', true)" onmouseout="onmousebutton_navid('navid_12',false)">Проигрыватель</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -70,7 +70,7 @@
 				<tr><td>Gmail: </td><td><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsTMDgrQKqdwQkrZwqFzvWQGwZCqFVzjNXzhCLSqMcTvDSvXhJbTcghbbFLFCXWkmrMbcdLl" title="igorbogdanov228@gmail.com" target="_blank">igorbogdanov228@gmail.com</a></td></tr>
 				<tr><td>Skype: </td><td><a href="https://join.skype.com/invite/mWhlfEEjHiYO" title="justin22819">justin22819</a></td></tr>
 			</table>
-			<p class="mem_text">Когда хочешь ускорить процесс обучения программирования:) <span class="smile_size">😂</span></p>
+			<p id="mem" class="mem_text">Когда хочешь ускорить процесс обучения программирования:) <span class="smile_size">😂</span></p>
 			<figure>
 				<img id="image_Jim_Carrey" class="image_Jim_Carrey notselection" src="./images/Jim_Carrey.gif" alt="Актёр Джим Керри" title="Актёр Джим Керри">
 				<figcaption id="figcamJC" class="text_w_shadow_b">Актёр 
@@ -104,7 +104,7 @@
 				<dfn class="text_b_shadow_w">Аудио</dfn> <span class="text_w_shadow_b">— это общий термин, относящийся к звуковым технологиям.</span></p>
 			</blockquote>
 			<div id="music-panel" class="notselection">
-				<figure class="music_img">
+				<figure>
 					<a id="music_photo_href" target="_blank"><img id="music_image"></a>
 					<figcaption class="text_w_shadow_b">
 						Исполнитель <a id="music_executor" target="_blank"></a> - музыкальный альбом<br><a id="music_album_href" target="_blank"><cite id="music_namealbum"></cite></a>.
@@ -136,11 +136,11 @@
 						<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Volume(0)"><span class="text_w_shadow_b">Звук: <span id="music_volume">100</span></span></button>
 						<input id="music_plus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_plus', true)" onmouseout="onmousebutton_music('music_plus', false)" onclick="Music_Volume(1)" value="+">
 					</div>
-					<input id="music_currenttime_-5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_-5second', true)" onmouseout="onmousebutton_music('music_currenttime_-5second', false)" onclick="Music_CurrentTime(false)" value="-5 секунд">
+					<input id="music_currenttime_-5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_-5second', true)" onmouseout="onmousebutton_music('music_currenttime_-5second', false)" onclick="Music_CurrentTime(false)" value="-5 сек.">
 					<input id="music_playbackrate-" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate-', true)" onmouseout="onmousebutton_music('music_playbackrate-', false)" onclick="Music_PlayBackRate(false)" value="-">
 					<button id="music_speedtext" class="text_w_shadow_b music_textblock" onmouseover="onmousebutton_music('music_speedtext', true)" onmouseout="onmousebutton_music('music_speedtext', false)" onclick="Music_PlayBackRate('reset')">Ускорение: <span id="music_playbackrate">1.00</span></button>
 					<input id="music_playbackrate+" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate+', true)" onmouseout="onmousebutton_music('music_playbackrate+', false)" onclick="Music_PlayBackRate(true)" value="+">
-					<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(true)" value="+5 секунд">
+					<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(true)" value="+5 сек.">
 				</div>
 			</div>
 			<br><br><br>

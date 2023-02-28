@@ -543,18 +543,12 @@ document.onclick = function(e) { // кликабельная область пр
     if (!e) { 
         e = window.event; 
     }
-    let Xmix = 460, Xmax; 
-    let Ymin = 3811, Ymax;
-    if(window.matchMedia("only screen and (max-width: 980px)").matches) {
-        Xmix = 328;
-        Ymin = 4266;
-    }
-    Xmax = Xmix + 600;
-    Ymax = Ymin + 27;
-    //alert(`X: ${getX(e)}, Y: ${getY(e)}`);
+    let Xmin = 415, Xmax = Xmin + 685;
+    let Ymin = 4050, Ymax = Ymin + 115;
+
     console.log(`X: ${getX(e)}, Y: ${getY(e)}`);
-    if ( getX(e) >= Xmix && getX(e) <= Xmax && getY(e) >= Ymin && getY(e) <= Ymax ) {
-        let value = ( getX(e) - Xmix ) / ( ( Xmax - Xmix ) / 100 );
+    if ( getX(e) >= Xmin && getX(e) <= Xmax && getY(e) >= Ymin && getY(e) <= Ymax ) {
+        let value = ( getX(e) - Xmin ) / ( ( Xmax - Xmin ) / 100 );
         let music_Player = document.getElementById("music_player");
         music_Player.currentTime = music_Player.duration / 100 * value;
     }

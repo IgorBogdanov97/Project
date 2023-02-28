@@ -262,7 +262,7 @@ footer {
 }
 
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1500px) {
 	.logo_type { width: 100%; padding: 10px; }
 	nav { float: left; margin-right: -100%; }
 	nav ul { padding-left: 15px; }

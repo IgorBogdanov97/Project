@@ -5,75 +5,6 @@ body {
 
 * { box-sizing: border-box; }
 
-video {
-	margin: auto;
-	width: 500px;
-	height: 400px;
-	display: block;
-	outline: #178282 solid 4px;
-	box-shadow: 0px 0px 10px white;
-}
-
-address {
-	color: white;
-	font-weight: bold;
-	text-align: center;	
-	text-shadow: 1px 1px 2px black;
-}
-
-figure, .center { text-align: center; }
-
-.text_w_shadow_b {
-	color: white;
-	text-shadow: 1px 1px 2px black;
-}
-
-.text_b_shadow_w {
-	color: black;
-	text-shadow: 1px 1px 2px white;
-}
-
-img#main_photo {
-	z-index: -1;
-	opacity: 0.0;
-	width: 400px;
-	height: 500px;
-	border-radius: 5%;
-	outline: #178282 solid 4px;
-	box-shadow: 0px 0px 20px white;
-}
-
-img.image_Jim_Carrey {
-	width: 400px;
-	height: 200px;
-	border-radius: 5%;
-	outline: #178282 solid 4px;
-	box-shadow: 0px 0px 10px white;
-}
-
-img.gadgetsandcoffee {
-	width: 400px;
-	height: 380px;
-	border-radius: 5%;
-	outline: #178282 solid 4px;
-	box-shadow: 0px 0px 10px white;
-}
-
-p.mem_text {
-	color: white;
-	text-align: center;
-	text-shadow: 1px 1px 2px black;
-}
-
-span.smile_size { font-size: 30px; }
-
-blockquote {
-	width: 45%;
-	color: white;
-	margin: 2.5vw auto;
-	text-shadow: 1px 1px 2px black;
-}
-
 a:link {
 	color: #238623;
 	text-decoration: none;
@@ -122,6 +53,16 @@ a:focus {
 	-webkit-user-select: none;	
 }
 
+.text_w_shadow_b {
+	color: white;
+	text-shadow: 1px 1px 2px black;
+}
+
+.text_b_shadow_w {
+	color: black;
+	text-shadow: 1px 1px 2px white;
+}
+
 .logo_type {
 	padding: 10px;
 	color: #0000e6;
@@ -151,6 +92,8 @@ nav ul li {
 	background-color: #178282;
 }
 
+nav ul li:hover > ul { display: inline-block; }
+
 nav ul li a {
 	display: block;
 	padding-left: 9px;
@@ -166,33 +109,28 @@ nav ul li a {
 nav ul li a:hover { font-size: 190%; }
 
 nav ul ul {
+	width: -50%;
 	display: none;
+	padding-left: 0;	
 	position: absolute;
+	box-shadow: 0px 0px 5px white;
 }
-
-nav ul li:hover > ul { display: inline-block; }
 
 nav ul ul li {
 	min-width: 220px;
 	display: list-item;
 }
 
-nav ul ul {
-	width: -50%;
-	padding-left: 0;
-	box-shadow: 0px 0px 5px white;
-}
+figure, .center { text-align: center; }
 
-input#matetial_learn_1, input#matetial_learn_2  {
-	background: #1aa1a1;
-	border: 2px solid black;
-	box-shadow: 0px 0px 5px white;
-}
-
-input#button_topic {
-	color: black;
-	background: white;
-	box-shadow: 0px 0px 5px white;
+img#main_photo {
+	z-index: -1;
+	opacity: 0.0;
+	width: 400px;
+	height: 500px;
+	border-radius: 5%;
+	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 20px white;
 }
 
 table.table_1 {
@@ -256,6 +194,64 @@ table.table_1 tr th:nth-child(2), td:nth-child(2) {
 	color: navy;
 }
 
+img.image_Jim_Carrey {
+	width: 400px;
+	height: 200px;
+	border-radius: 5%;
+	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 10px white;
+}
+
+p.mem_text {
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px 2px black;
+}
+
+span.smile_size { font-size: 30px; }
+
+img.gadgetsandcoffee {
+	width: 400px;
+	height: 380px;
+	border-radius: 5%;
+	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 10px white;
+}
+
+video {
+	margin: auto;
+	width: 500px;
+	height: 400px;
+	display: block;
+	outline: #178282 solid 4px;
+	box-shadow: 0px 0px 10px white;
+}
+
+blockquote {
+	width: 45%;
+	color: white;
+	margin: 2.5vw auto;
+	text-shadow: 1px 1px 2px black;
+}
+
+address {
+	color: white;
+	font-weight: bold;
+	text-align: center;	
+	text-shadow: 1px 1px 2px black;
+}
+
+input#matetial_learn_1, input#matetial_learn_2  {
+	background: #1aa1a1;
+	border: 2px solid black;
+	box-shadow: 0px 0px 5px white;
+}
+
+input#button_topic {
+	color: black;
+	background: white;
+	box-shadow: 0px 0px 5px white;
+}
 footer {
 	text-align: center;
 	font-style: italic;
@@ -271,6 +267,7 @@ footer {
 		top: 16.75%;
 		left: 100%;
 	}
+}
 	/*p {
 		font-size: 14px;
 	}*/
@@ -283,5 +280,5 @@ footer {
 		font-size: 100%;
 		margin-left: 10 auto;
 		text-shadow: 1px 1px 2px black;
-	}*/
-}
+	}
+}*/

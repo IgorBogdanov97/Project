@@ -195,6 +195,14 @@ input#button_topic {
 	box-shadow: 0px 0px 5px white;
 }
 
+table.table_1 {
+	width: 30%;
+	margin: auto;
+	font-size: 20px;
+	font-style: oblique;
+	text-shadow: 1px 1px 8px white;
+}
+
 table.table_1, table.table_1 th, td {
 	border: 1px solid black;
 	border-collapse: collapse;
@@ -206,14 +214,6 @@ table.table_1 caption {
 	font-weight: bold;
 	font-style: oblique;
 	text-shadow: 1px 1px 2px black;
-}
-
-table.table_1 {
-	width: 35%;
-	margin: auto;
-	font-size: 105%;
-	font-style: oblique;
-	text-shadow: 1px 1px 8px white;
 }
 
 table.table_1 col:nth-child(1) {

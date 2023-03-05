@@ -262,8 +262,8 @@ footer {
 }
 
 
-@media screen and (max-width: 1500px) {
-	.logo_type { width: 100%; padding: 10px; }
+@media screen and (max-width: 1000px) {
+	/*.logo_type { width: 100%; padding: 10px; }*/
 	nav { float: left; margin-right: -100%; }
 	nav ul { padding-left: 15px; }
 	nav ul li {  display: block;  }
@@ -273,7 +273,6 @@ footer {
 		top: 16.75%;
 		left: 100%;
 	}
-
 	/*#figcapBIM, .mem_text, #cardimagetext, #video_text_samp, address, #copyright {
 		font-size: 100%;
 	}

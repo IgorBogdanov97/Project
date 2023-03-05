@@ -261,7 +261,6 @@ footer {
 	font-style: italic;
 }
 
-
 @media screen and (max-width: 1000px) {
 	nav { float: left; margin-right: -100%; }
 	nav ul { padding-left: 15px; }
@@ -271,9 +270,6 @@ footer {
 		display: inline;
 		top: 16.75%;
 		left: 100%;
-	}
-	figure figcaption {
-		font-size: 30px;
 	}
 	/*p {
 		font-size: 14px;

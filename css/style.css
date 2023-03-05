@@ -283,11 +283,11 @@ footer {
 	#music_number, #music_message {
 		font-size: 200%;
 	}
-	/*#music-panel figure figcaption,
+	#music-panel figure figcaption,
 	.music-player-text,
 	#music_time {
 		font-size: 50%;
-	}*/
+	}
 }
 	/**/
 	/*#figcapBIM, .mem_text, #cardimagetext, #video_text_samp, address, #copyright {

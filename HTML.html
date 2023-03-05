@@ -125,20 +125,20 @@
 						<img id="music_random_track" src="./images/music_random_image.png" onclick="Music_RandomTrack()" title="Случайный трек">
 					</form>
 					<div class="music_nexttrack_section">
-						<input id="music_previoustrack" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_previoustrack', true)" onmouseout="onmousebutton_music('music_previoustrack',false)" onclick="Music_NextTrack(-1)" value="Предыдущий">
+						<input id="music_previoustrack" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_previoustrack', true)" onmouseout="onmousebutton_music('music_previoustrack',false)" onclick="Music_PreviousTrack()" value="Предыдущий">
 						<button id="music_pause" type="button" onmouseover="onmousebutton_music('music_pause', true)" onmouseout="onmousebutton_music('music_pause',false)" onclick="Music_PauseTrack()">Пауза</button>
-						<input id="music_nexttrack" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_nexttrack', true)" onmouseout="onmousebutton_music('music_nexttrack', false)" onclick="Music_NextTrack(+1)" value="Следующий">
+						<input id="music_nexttrack" class="text_w_shadow_b" type="button" onmouseover="onmousebutton_music('music_nexttrack', true)" onmouseout="onmousebutton_music('music_nexttrack', false)" onclick="Music_NextTrack()" value="Следующий">
 					</div>	
 					<div class="music_section_volume">
-						<input id="music_minus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_minus', true)" onmouseout="onmousebutton_music('music_minus', false)" onclick="Music_Volume(-1)" value="-">
-						<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Volume(0)"><span class="text_w_shadow_b">Звук: <span id="music_volume">100</span></span></button>
-						<input id="music_plus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_plus', true)" onmouseout="onmousebutton_music('music_plus', false)" onclick="Music_Volume(1)" value="+">
+						<input id="music_minus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_minus', true)" onmouseout="onmousebutton_music('music_minus', false)" onclick="Music_Sound_Minus()" value="-">
+						<button id="music_volum" class="music_volume" type="button" onmouseover="onmousebutton_music('music_volum', true)" onmouseout="onmousebutton_music('music_volum', false)" onclick="Music_Sound()"><span class="text_w_shadow_b">Звук: <span id="music_volume">100</span></span></button>
+						<input id="music_plus" class="text_w_shadow_b music_volume" type="button" onmouseover="onmousebutton_music('music_plus', true)" onmouseout="onmousebutton_music('music_plus', false)" onclick="Music_Sound_Plus()" value="+">
 					</div>
-					<input id="music_currenttime_-5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_-5second', true)" onmouseout="onmousebutton_music('music_currenttime_-5second', false)" onclick="Music_CurrentTime(false)" value="-5 сек.">
-					<input id="music_playbackrate-" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate-', true)" onmouseout="onmousebutton_music('music_playbackrate-', false)" onclick="Music_PlayBackRate(false)" value="-">
-					<button id="music_speedtext" class="text_w_shadow_b music_textblock" onmouseover="onmousebutton_music('music_speedtext', true)" onmouseout="onmousebutton_music('music_speedtext', false)" onclick="Music_PlayBackRate('reset')">Ускорение: <span id="music_playbackrate">1.00</span></button>
-					<input id="music_playbackrate+" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate+', true)" onmouseout="onmousebutton_music('music_playbackrate+', false)" onclick="Music_PlayBackRate(true)" value="+">
-					<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(true)" value="+5 сек.">
+					<input id="music_currenttime_-5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_-5second', true)" onmouseout="onmousebutton_music('music_currenttime_-5second', false)" onclick="Music_CurrentTime(-5)" value="-5 сек.">
+					<input id="music_playbackrate-" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate-', true)" onmouseout="onmousebutton_music('music_playbackrate-', false)" onclick="Music_PlayBackRate_Minus()" value="-">
+					<button id="music_speedtext" class="text_w_shadow_b music_textblock" onmouseover="onmousebutton_music('music_speedtext', true)" onmouseout="onmousebutton_music('music_speedtext', false)" onclick="Music_PlayBackRate_Reset()">Ускорение: <span id="music_playbackrate">1.00</span></button>
+					<input id="music_playbackrate+" class="text_w_shadow_b music_playbackrate" type="button" onmouseover="onmousebutton_music('music_playbackrate+', true)" onmouseout="onmousebutton_music('music_playbackrate+', false)" onclick="Music_PlayBackRate_Plus()" value="+">
+					<input id="music_currenttime_+5second" class="text_w_shadow_b music_currenttime" type="button" onmouseover="onmousebutton_music('music_currenttime_+5second', true)" onmouseout="onmousebutton_music('music_currenttime_+5second', false)" onclick="Music_CurrentTime(+5)" value="+5 сек.">
 				</div>
 			</div>
 			<br><br><br>
@@ -153,7 +153,6 @@
 			</div>
 			<br>
 			<footer id="copyright">Copyright Igor Bogdanov</footer>
-			<p style="text-align:center;">Тест - 5</p>
 			<br>
 		</main>
 	</body>

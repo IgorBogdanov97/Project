@@ -192,7 +192,7 @@ function Music_Treck() { // запуск проигрывателя
     }
     music_Message.innerHTML = Executor + 
         `<a href="${Music_ExecutorHref(ExecutorOne)}" title="Ссылка на биографию ${ExecutorOne}" target="_blank"><i >${ExecutorOne}</i></a>` + Feat + message + `, трек 
-        <a href="https://new.soundmax.me/search/${Music_FileName[Music_AlbumID][music_Id]}" title="Ссылка на трек &#8220;${MusicName(music_Id)}&#8220; (${Music_AlbumYear[Music_AlbumID]})" target="_blank">
+        <br><a href="https://new.soundmax.me/search/${Music_FileName[Music_AlbumID][music_Id]}" title="Ссылка на трек &#8220;${MusicName(music_Id)}&#8220; (${Music_AlbumYear[Music_AlbumID]})" target="_blank">
             <cite>"${MusicName(music_Id)}" (${Music_AlbumYear[Music_AlbumID]})</cite>
         </a>.`;
 
@@ -543,8 +543,8 @@ document.onclick = function(e) { // кликабельная область пр
     if (!e) { 
         e = window.event; 
     }
-    let Xmin = 415, Xmax = Xmin + 685;
-    let Ymin = 4050, Ymax = Ymin + 115;
+    let Xmin = 415, Xmax = 1102;
+    let Ymin = 4040, Ymax = 4066;
 
     console.log(`X: ${getX(e)}, Y: ${getY(e)}`);
     if ( getX(e) >= Xmin && getX(e) <= Xmax && getY(e) >= Ymin && getY(e) <= Ymax ) {

@@ -277,10 +277,11 @@ footer {
 		top: 16.75%;
 		left: 100%;
 	}
+	p, figure figcaption#figcamJC {
+		font-size: 10px;
+	}
 }
-	/*p {
-		font-size: 14px;
-	}*/
+	/**/
 	/*#figcapBIM, .mem_text, #cardimagetext, #video_text_samp, address, #copyright {
 		font-size: 100%;
 	}

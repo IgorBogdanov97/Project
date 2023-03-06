@@ -131,32 +131,30 @@ let music_Muted = false;
 let music_Volume = 1;
 let music_PlayBackRate = 1;
 
-function Music_ShowAlbumImage() { // интерфейс альбома
+function Music_ShowAlbum() { // интерфейс альбома
     let music_Photo_Href = document.getElementById("music_photo_href");
     let music_Image = document.getElementById("music_image");
     let music_Executor = document.getElementById("music_executor");
     let music_Album_Href = document.getElementById("music_album_href");
     let music_Namealbum = document.getElementById("music_namealbum");
-    let image_src = `./images/${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]}.jpg`;
-    let album_title = `"${Music_AlbumName[Music_AlbumID]}" (${Music_AlbumYear[Music_AlbumID]})`;
     
     music_Photo_Href.title = Music_AlbumArtist[Music_AlbumID];
     music_Photo_Href.href = Music_ExecutorHref(Music_AlbumArtist[Music_AlbumID]);
-    music_Image.src = image_src;
+    music_Image.src = `./images/${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]}.jpg`;
     music_Image.alt = Music_AlbumArtist[Music_AlbumID];
     music_Executor.innerText = Music_AlbumArtist[Music_AlbumID];
     music_Executor.href = Music_ExecutorHref(Music_AlbumArtist[Music_AlbumID]);
     music_Executor.title = Music_AlbumArtist[Music_AlbumID];
     music_Album_Href.href = Music_Album_Href(`${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]}`);
-    music_Album_Href.title = `Ссылка на альбом ${album_title}`;
-    music_Namealbum.innerText = album_title;
+    music_Album_Href.title = `Ссылка на альбом "${Music_AlbumName[Music_AlbumID]}" (${Music_AlbumYear[Music_AlbumID]})`;
+    music_Namealbum.innerText = `"${Music_AlbumName[Music_AlbumID]}" (${Music_AlbumYear[Music_AlbumID]})`;
     return;
 }
 
 function Music_Treck() { // запуск проигрывателя
     let Feat;
-    let Executor;
     let message = "";
+    let Executor = Music_IsExecutor(music_Id);
     let ExecutorOne = Music_Executor(music_Id);
     let music_Player = document.getElementById("music_player");
     let music_Message = document.getElementById("music_message");
@@ -164,16 +162,6 @@ function Music_Treck() { // запуск проигрывателя
     let Album = `${Music_AlbumArtist[Music_AlbumID]} - ${Music_AlbumName[Music_AlbumID]} (${Music_AlbumYear[Music_AlbumID]})`;
     music_Player.src=`.\\music\\${Album}\\${Music_FileName[Music_AlbumID][music_Id]}.mp3`;
 
-    if(Music_IsExecutor(music_Id) == -1) {
-        Feat = "";
-    } else {
-        Feat = " feat. ";
-    }
-    if(Music_IsExecutor(music_Id) == -1) {
-        Executor = "Исполнитель ";
-    } else {
-        Executor = "Исполнители ";
-    }
     if(music_Play == true) {
         music_Player.autoplay = "autoplay";
     } else {
@@ -191,6 +179,13 @@ function Music_Treck() { // запуск проигрывателя
         music_Number.innerText = `( ${(music_Max-Music_RandomFileName.length+1)}/${music_Max} )`;
     } else {
         music_Number.innerText = `( ${(music_Id)}/${music_Max} )`;
+    }
+    if(Executor == -1) {
+        Feat = "";
+        Executor = "Исполнитель ";
+    } else {
+        Feat = " feat. ";
+        Executor = "Исполнители ";
     }
     if (Feat.length > 0) {
         let parts = Music_FileName[Music_AlbumID][music_Id].slice(Music_FileName[Music_AlbumID][music_Id].indexOf('feat.')+6).split(' ');
@@ -330,7 +325,6 @@ function Music_IsRandom() { // удаление строчки из рандом
     if (Music_RandomFileName.length <= 1) {
         Music_LoadTracks();
         Music_TrackListResetColors();
-        return Music_IsRandom();
     }
     let rand = Music_RandomTreck();
     let music = Music_FileName[Music_AlbumID].indexOf(Music_RandomFileName[rand]);
@@ -381,8 +375,8 @@ function Music_RandomTrack() { //  включения режима "рандом
 }
 
 function Music_CreateAlbumsList() { // Создание "альбом-листа"
-    let music_AlbumsList = document.getElementById("music_albumlist");
     let message = "";
+    let music_AlbumsList = document.getElementById("music_albumlist");
     for (let i = 1; i < Music_AlbumName.length; i++) {
         if (i == Music_AlbumID) {
             if (TopStatus == false) {
@@ -498,7 +492,7 @@ function Music_SelectAlbum(value) { // выбрать трек из "альбо�
     music_Max = Music_FileName[Music_AlbumID].length - 1;
     Music_RandomFileName = Array.from(Music_FileName[Music_AlbumID]);
     Music_Treck();
-    Music_ShowAlbumImage();
+    Music_ShowAlbum();
     Music_CreateAlbumsList();
     Music_CreateTracksList();    
     return;
@@ -556,7 +550,7 @@ function Music_CurrentTime(value) { // перемотка на 5 секунд в
 function Music_ConvertTime(time) { // конверт корректного отображения времени
     let seconds = Math.ceil( time - 1 );
     let minutes = Math.ceil( time / 60 - 1 );
-    let ext_seconds = Math.ceil( time % 60 - 1 );
+    let ext_seconds = Math.ceil( time % 60 - 1);
 
     if (seconds < 1) return `00:00`;
     else if (seconds < 10) return `00:0${seconds}`;
@@ -626,13 +620,14 @@ function Music_ProgressClick(e) {
     let value = e.offsetX / (this.clientWidth / 100) ;
     let music_Player = document.getElementById("music_player");
     music_Player.currentTime = music_Player.duration / 100 * value;
+    return;
 }
 
 // Загрузка
 Age();
 SelectTopic();
 Music_Treck();
-Music_ShowAlbumImage();
+Music_ShowAlbum();
 Music_CreateAlbumsList();	
 Music_CreateTracksList();
 onmousebutton_matetiallearn(1,false);

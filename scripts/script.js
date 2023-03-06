@@ -17,10 +17,13 @@ setInterval(TimeLogoСolor, 100);
 function TimeLogoСolor() {
     let oldid = newSymbolID == 1 ? 14 : newSymbolID - 1;
    
-    document.getElementById(`logo_${oldid}`).style.color = TopStatus == false ? 
-        "#0000e6" : "#505050";
-    document.getElementById(`logo_${newSymbolID}`).style.color = TopStatus == false ? 
-        "yellow" : "white";
+    if(TopStatus == false) {
+        document.getElementById(`logo_${oldid}`).style.color = "#0000e6";
+        document.getElementById(`logo_${newSymbolID}`).style.color = "yellow";
+    } else {
+        document.getElementById(`logo_${oldid}`).style.color = "#505050";
+        document.getElementById(`logo_${newSymbolID}`).style.color = "white";
+    }
     newSymbolID = newSymbolID < 14 ? 
         ++newSymbolID : 1;
     return;
@@ -37,9 +40,17 @@ function HatColor() {
     document.getElementById(`header_${headerTextID}`).style.color = changecolor[headerColor];
 
     if (headerTextID == 6) {
-       headerColor = headerColor <= 12 ? ++headerColor : 1;
+        if (headerColor <= 12) {
+            headerColor++;
+        } else {
+            headerColor = 1;
+        }
     }
-    headerTextID = headerTextID < 6 ? ++headerTextID : 1;
+    if (headerTextID < 6) {
+        headerTextID++;
+    } else {
+        headerTextID = 1;
+    }
     return;
 }
 
@@ -100,8 +111,11 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_progress").classList.add("music_day_3");
         document.getElementById("music_albumlist").style.background = "";
         document.getElementById("music_tracklist").style.background = "";
-        document.getElementById("music_previoustrack").style.background = music_OnRandom == true ? 
-            "#178282" : "";
+        if (music_OnRandom == true) {
+            document.getElementById("music_previoustrack").style.background = "#178282";
+        } else {
+            document.getElementById("music_previoustrack").style.background = "";
+        }
         document.getElementById("music_pause").style.background = "";
         document.getElementById("music_nexttrack").style.background = "";
         document.getElementById("music_minus").style.background = "";
@@ -146,9 +160,11 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_progress").classList.add("music_night_3");
         document.getElementById("music_albumlist").style.background = "white";
         document.getElementById("music_tracklist").style.background = "white";
-        document.getElementById("music_previoustrack").style.background = 
-            TopStatus == true && music_OnRandom == true ?
-                "black" : "#383838";
+        if (TopStatus == true && music_OnRandom == true) {
+            document.getElementById("music_previoustrack").style.background = "black";
+        } else {
+            document.getElementById("music_previoustrack").style.background = "#383838";
+        }
         document.getElementById("music_pause").style.background = "#383838";
         document.getElementById("music_nexttrack").style.background = "#383838";
         document.getElementById("music_minus").style.background = "#383838";
@@ -159,8 +175,8 @@ function SelectTopic(value=!TopStatus) {
         document.getElementById("music_speedtext").style.background = "#383838";
         document.getElementById("music_playbackrate+").style.background = "#383838";
         document.getElementById("music_currenttime_+5second").style.background = "#383838";
-        document.getElementById("matetial_learn_1").style = "background:#383838;color:white;";
-        document.getElementById("matetial_learn_2").style = "background:#383838;color:white;";
+        document.getElementById("matetial_learn_1").style = "background:#2c2c2c;color:white;";
+        document.getElementById("matetial_learn_2").style = "background:#2c2c2c;color:white;";
         document.getElementById("table_1").classList.remove("table_1_1");
         document.getElementById("table_1").classList.add("table_1_2");
         document.getElementById("copyright").style.color = "white";
@@ -171,11 +187,18 @@ function SelectTopic(value=!TopStatus) {
 function onmousebutton_navid(id, value) {
     let elem = document.getElementById(`${id}`);
     if (value == false) {
-        elem.style.background = TopStatus == false ? 
-            "#178282" : "#2c2c2c";
+        if (TopStatus == false) {
+            elem.style.background = "#178282";
+        } else {
+            elem.style.background = "#2c2c2c";
+        }
+        
     } else {
-         elem.style.background = TopStatus == false ? 
-            "#1aa1a1" : "#696969";
+        if(TopStatus == false) {
+            elem.style.background = "#1aa1a1";
+        } else {
+            elem.style.background = "#696969";
+        }
     }
     return;
 }
@@ -184,11 +207,17 @@ function onmousebutton_music(name, value) {
     if (name == "music_previoustrack" && music_OnRandom == true) return true;
     let elem = document.getElementById(name);
     if (TopStatus == false) {
-        elem.style.background = value == true ? 
-            "#b0c4c4" : "";
+        if(value == true) {
+            elem.style.background = "#b0c4c4";
+        } else {
+            elem.style.background = "";
+        }
     } else {
-        elem.style.background = value == true ? 
-            "grey" : "#383838";
+        if(value == true) {
+            elem.style.background = "grey";
+        } else {
+            elem.style.background = "#383838";
+        }        
     }
     return;
 }
@@ -196,11 +225,17 @@ function onmousebutton_music(name, value) {
 function onmousebutton_matetiallearn(id, value) {
     let elem = document.getElementById(`matetial_learn_${id}`);
     if (value == false) {
-        elem.style = TopStatus == false ? 
-            "background:#1aa1a1;" : "background:#2c2c2c;color:white;";
+        if(TopStatus == false) {
+            elem.style = "background:#1aa1a1;";
+        } else {
+            elem.style = "background:#2c2c2c;color:white;";
+        }
     } else {
-        elem.style = TopStatus == false ?
-             "background:#50b4b4;" : "background:#BEBEBE;";
+        if(TopStatus == false) {
+            elem.style = "background:#50b4b4;";
+        } else {
+            elem.style = "background:#BEBEBE;";            
+        }
     }
     return;
 }
@@ -208,11 +243,17 @@ function onmousebutton_matetiallearn(id, value) {
 function onmousebutton_topic(value) {
     let elem = document.getElementById("button_topic");
     if (value == false) {
-        elem.style = TopStatus == false ? 
-            "color:black;background:white;" : "color:white;background:black;";
+        if (TopStatus == false) {
+            elem.style = "color:black;background:white;";
+        } else {
+            elem.style = "color:white;background:black;";    
+        }
     } else {
-        elem.style = TopStatus == false ? 
-            "color:white;background:black;" : "color:black;background:white;";
+        if (TopStatus == false) {
+            elem.style = "color:white;background:black;";
+        } else {
+            elem.style = "color:black;background:white;";    
+        }
     }
     return;
 }

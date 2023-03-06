@@ -280,12 +280,7 @@ footer {
 	p, figure figcaption#figcamJC {
 		font-size: 10px;
 	}
-	#music_number, #music_message {
-		font-size: 200%;
-	}
-	#music-panel figure figcaption,
-	.music-player-text,
-	#music_time {
+	.music-player-text {
 		font-size: 50%;
 	}
 }

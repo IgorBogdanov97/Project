@@ -127,8 +127,8 @@ let music_OnRandom = false;
 let music_Id = Music_RandomTreck();
 let music_OldId = 0;
 let music_Play = true;
-let music_Muted = false;
-let music_Volume = 1;
+let music_Muted = true;
+let music_Volume = 0; // 1
 let music_PlayBackRate = 1;
 
 function Music_ShowAlbum() { // интерфейс альбома

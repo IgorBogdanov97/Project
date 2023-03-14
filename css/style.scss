@@ -85,6 +85,7 @@ nav {
 	ul {
 		margin: 0;
 		list-style: none;
+		line-height: 60px;
 		padding-left: 25px;
 
 		li {
@@ -93,9 +94,7 @@ nav {
 
 			a {
 				display: block;
-				
 				font-size: 150%;
-				line-height: 60px;
 				font-weight: bold;
 				font-style: italic;
 				padding-left : 9px;
@@ -104,11 +103,11 @@ nav {
 				text-shadow: 1px 1px 2px black;
 			}
 			a:hover { 
-				font-size: 190%; 
+				font-size: 190%;
 			}
 		}
 		li:hover > ul { 
-			display: inline-block; 
+			display: list-item;
 		}
 		ul {
 			width: -50%;
@@ -297,12 +296,9 @@ footer {
 		}
 	}
 
-	p, figure figcaption#figcamJC {
+	/*p, figure figcaption#figcamJC {
 		font-size: 10px;
-	}
+	}*/
 }
 @media screen and (max-width: 450px) {
-	.music-player-text {
-		font-size: 50%;
-	}
 }

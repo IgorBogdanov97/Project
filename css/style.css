@@ -289,7 +289,7 @@ footer {
   }*/
 }
 @media screen and (max-width: 450px) {
-  /*.music-player-text {
-  	font-size: 50%;
-  }*/
+  figcaption {
+    font-size: 1.5vw;
+  }
 }/*# sourceMappingURL=style.css.map */

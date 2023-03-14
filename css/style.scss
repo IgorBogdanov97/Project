@@ -94,7 +94,7 @@ nav {
 
 			a {
 				display: block;
-				font-size: 150%;
+				font-size: 24px;
 				font-weight: bold;
 				font-style: italic;
 				padding-left : 9px;
@@ -103,7 +103,7 @@ nav {
 				text-shadow: 1px 1px 2px black;
 			}
 			a:hover { 
-				font-size: 190%;
+				font-size: 30px;
 			}
 		}
 		li:hover > ul { 
@@ -301,7 +301,4 @@ footer {
 	}*/
 }
 @media screen and (max-width: 450px) {
-	figcaption {
-		font-size: 1.5vw;
-	}
 }

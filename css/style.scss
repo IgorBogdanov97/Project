@@ -300,5 +300,12 @@ footer {
 		font-size: 10px;
 	}*/
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 150px) {
+	figure figcaption {
+		background-color: yellow;
+		font-size: 5vw;
+	}
+	p {
+		font-size: 1vw;
+	}
 }

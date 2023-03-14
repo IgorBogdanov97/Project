@@ -284,16 +284,13 @@ footer {
     width: 93.5%;
     display: inline;
   }
+  figcaption {
+    font-size: 1.5vw;
+  }
+  main p {
+    font-size: 1.25vw;
+  }
   /*p, figure figcaption#figcamJC {
   	font-size: 10px;
   }*/
-}
-@media screen and (max-width: 150px) {
-  figure figcaption {
-    background-color: yellow;
-    font-size: 5vw;
-  }
-  p {
-    font-size: 1vw;
-  }
 }/*# sourceMappingURL=style.css.map */

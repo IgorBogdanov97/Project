@@ -228,7 +228,7 @@ function Music_Sound_Minus() { // уменьшить звук
     if(music_Player.volume >= 0.1) {
         music_Player.volume -= 0.1; 
     }
-    music_Volume = music_Player.volume;
+    music_Volume = Math.ceil(music_Player.volume);
     music_Vol.innerText = Math.floor(music_Player.volume * 100);
     if(music_Player.volume < 0.01) {
         music_Vol.style.color = "red";
@@ -259,7 +259,7 @@ function Music_Sound_Plus() { // увеличить звук
     if(music_Player.volume < 1) {
         music_Player.volume += 0.1; 
     }
-    music_Volume = music_Player.volume;
+    music_Volume = Math.ceil(music_Player.volume);
     music_Vol.innerText = Math.floor(music_Player.volume * 100);
     music_Vol.style.color = "lime";
     return;

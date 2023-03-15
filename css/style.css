@@ -129,7 +129,7 @@ figure, .center {
   text-align: center;
 }
 
-img#main_photo {
+#main_photo {
   z-index: -1;
   opacity: 0;
   width: 400px;
@@ -139,7 +139,7 @@ img#main_photo {
   box-shadow: 0px 0px 20px white;
 }
 
-img#image_Jim_Carrey {
+#image_Jim_Carrey {
   width: 400px;
   height: 200px;
   border-radius: 5%;
@@ -147,7 +147,7 @@ img#image_Jim_Carrey {
   box-shadow: 0px 0px 10px white;
 }
 
-img.gadgetsandcoffee {
+#gadget_sand_coffee {
   width: 400px;
   height: 380px;
   border-radius: 5%;
@@ -155,72 +155,76 @@ img.gadgetsandcoffee {
   box-shadow: 0px 0px 10px white;
 }
 
-table.table_1 {
+.table_1 {
   width: 30%;
   margin: auto;
   font-size: 20px;
   font-style: oblique;
   text-shadow: 1px 1px 8px white;
 }
-table.table_1 caption {
+.table_1 caption {
   color: white;
   font-weight: bold;
   font-style: oblique;
   text-shadow: 1px 1px 2px black;
 }
-table.table_1 tr th:nth-child(2), table.table_1 td:nth-child(2) {
+.table_1 th:nth-child(2), .table_1 td:nth-child(2) {
   color: navy;
 }
-table.table_1 th {
+.table_1 th {
   text-align: left;
 }
-table.table_1 td, table.table_1 th {
+.table_1 td, .table_1 th {
   padding: 10px;
 }
-table.table_1 col:nth-child(1) {
+.table_1 col:nth-child(1) {
   background: #178282;
 }
-table.table_1 col:nth-child(2) {
+.table_1 col:nth-child(2) {
   background: #50b4b4;
 }
-table.table_1 td:nth-child(1) {
+.table_1 td:nth-child(1) {
   font-weight: bold;
 }
 
-table.table_1, table.table_1 th, table.table_1 td {
+.table_1, .table_1 th, .table_1 td {
   border: 1px solid black;
   border-collapse: collapse;
   box-shadow: 0px 0px 5px white;
 }
 
-table.table_1_1 tr:nth-child(even) {
+.table_1_1 tr:nth-child(even) {
   background: #b3cccc;
 }
 
-table.table_1_2 tr:nth-child(even) {
+.table_1_2 tr:nth-child(even) {
   background: rgba(255, 255, 255, 0.4196078431);
 }
 
-table.hover_1 tr:hover {
+.hover_1 tr:hover {
   background: rgba(26, 161, 161, 0.7960784314);
 }
 
-table.hover_2 tr:hover {
+.hover_2 tr:hover {
   background: white;
 }
 
-p.mem_text {
+.mem_text {
   color: white;
   text-align: center;
   text-shadow: 1px 1px 2px black;
 }
 
-span.smile_size {
+.smile_size {
   font-size: 30px;
 }
 
-figure figcaption#figcamJC {
+#figcamJC {
   padding-top: 10px;
+}
+
+figcaption {
+  font-size: 1.25vw;
 }
 
 video {
@@ -287,10 +291,4 @@ footer {
   figcaption {
     font-size: 2vw;
   }
-  p, #music-panel figure figcaption {
-    font-size: 1.5vw;
-  }
-  /*p, figure figcaption#figcamJC {
-  	font-size: 10px;
-  }*/
 }/*# sourceMappingURL=style.css.map */

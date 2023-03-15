@@ -128,7 +128,7 @@ figure, .center {
 	text-align: center; 
 }
 
-img#main_photo {
+#main_photo {
 	z-index: -1;
 	opacity: 0.0;
 	width: 400px;
@@ -137,14 +137,14 @@ img#main_photo {
 	outline: #178282 solid 4px;
 	box-shadow: 0px 0px 20px white;
 }
-img#image_Jim_Carrey {
+#image_Jim_Carrey {
 	width: 400px;
 	height: 200px;
 	border-radius: 5%;
 	outline: #178282 solid 4px;
 	box-shadow: 0px 0px 10px white;
 }
-img.gadgetsandcoffee {
+#gadget_sand_coffee {
 	width: 400px;
 	height: 380px;
 	border-radius: 5%;
@@ -152,7 +152,7 @@ img.gadgetsandcoffee {
 	box-shadow: 0px 0px 10px white;
 }
 
-table.table_1 {
+.table_1 {
 	width: 30%;
 	margin: auto;
 	font-size: 20px;
@@ -166,7 +166,7 @@ table.table_1 {
 		text-shadow: 1px 1px 2px black;
 	}
 
-	tr th:nth-child(2), td:nth-child(2) {
+	th:nth-child(2), td:nth-child(2) {
 		color: navy;
 	}
 
@@ -191,40 +191,44 @@ table.table_1 {
 	}
 }
 
-table.table_1, table.table_1 th, table.table_1 td {
+.table_1, .table_1 th, .table_1 td {
 	border: 1px solid black;
 	border-collapse: collapse;
 	box-shadow: 0px 0px 5px white;
 }
 
-table.table_1_1 tr:nth-child(even) {
+.table_1_1 tr:nth-child(even) {
 	background: #b3cccc;
 }
 
-table.table_1_2 tr:nth-child(even) {
+.table_1_2 tr:nth-child(even) {
 	background: #ffffff6b; 
 }
 
-table.hover_1 tr:hover {	
+.hover_1 tr:hover {	
 	background: #1aa1a1cb;
 }
 
-table.hover_2 tr:hover {	
+.hover_2 tr:hover {	
 	background: white;
 }
 
-p.mem_text {
+.mem_text {
 	color: white;
 	text-align: center;
 	text-shadow: 1px 1px 2px black;
 }
 
-span.smile_size { 
+.smile_size { 
 	font-size: 30px; 
 }
 
-figure figcaption#figcamJC{
+#figcamJC{
 	padding-top: 10px;
+}
+
+figcaption {
+	font-size: 1.25vw;
 }
 
 video {
@@ -298,11 +302,4 @@ footer {
 	figcaption {
 		font-size: 2vw;
 	}
-	p, #music-panel figure figcaption {
-		font-size: 1.5vw;
-	}
-
-	/*p, figure figcaption#figcamJC {
-		font-size: 10px;
-	}*/
 }

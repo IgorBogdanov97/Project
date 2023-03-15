@@ -291,4 +291,49 @@ footer {
   figcaption {
     font-size: 2vw;
   }
+}
+@media screen and (max-width: 900px) {
+  figcaption {
+    font-size: 2.1vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  figcaption {
+    font-size: 2.2vw;
+  }
+}
+@media screen and (max-width: 700px) {
+  figcaption {
+    font-size: 2.3vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  figcaption {
+    font-size: 2.4vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  figcaption {
+    font-size: 2.5vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  figcaption {
+    font-size: 2.6vw;
+  }
+}
+@media screen and (max-width: 300px) {
+  figcaption {
+    font-size: 2.7vw;
+  }
+}
+@media screen and (max-width: 200px) {
+  figcaption {
+    font-size: 2.8vw;
+  }
+}
+@media screen and (max-width: 100px) {
+  figcaption {
+    font-size: 2.9vw;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -309,7 +309,7 @@ footer {
 
   blockquote {
     width: 85%;
-    font-size: 20px;
+    font-size: 20px; /*+6*/
     margin: 2.5vw auto;    
   }
 
@@ -321,9 +321,8 @@ footer {
   .video-review,
   .audio-term,
   .music-player-text,
-  .music_interface,
-  .music_time {
+  .music_interface {
     font-size: 14px;
   }
-
+  
 }

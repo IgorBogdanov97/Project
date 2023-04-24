@@ -333,7 +333,8 @@ footer {
   .video-review,
   .audio-term,
   .music-player-text,
-  .music_interface {
+  .music_interface,
+  .music_player_text_track {
     font-size: 14px;
   }
 

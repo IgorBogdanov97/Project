@@ -73,13 +73,15 @@ progress#music_progress.music_night_3::-webkit-progress-value { /* фон зап
 }
 
 .music_interface {
-    top: -33.75px;
+    top: -30px;
     position: relative;
 }
 
 #music_time {
+    top: -34px;
     color: black;
     text-align: center;
+    position: relative;
     font-style: oblique;
     font-weight: lighter;
     pointer-events: none;

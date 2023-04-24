@@ -87,16 +87,19 @@ nav {
   background-color: #178282;
   box-shadow: 0px 0px 10px white;
 }
+
 nav ul {
   margin: 0;
   list-style: none;
   line-height: 60px;
   padding-left: 25px;
 }
+
 nav ul li {
   display: inline-block;
   background-color: #178282;
 }
+
 nav ul li a {
   display: block;
   font-size: 24px;
@@ -107,12 +110,15 @@ nav ul li a {
   text-decoration: none;
   text-shadow: 1px 1px 2px black;
 }
+
 nav ul li a:hover {
   font-size: 30px;
 }
+
 nav ul li:hover > ul {
   display: list-item;
 }
+
 nav ul ul {
   width: -50%;
   display: none;
@@ -120,6 +126,7 @@ nav ul ul {
   position: absolute;
   box-shadow: 0px 0px 5px white;
 }
+
 nav ul ul li {
   min-width: 220px;
   display: list-item;
@@ -162,27 +169,34 @@ figure, .center {
   font-style: oblique;
   text-shadow: 1px 1px 8px white;
 }
+
 .table_1 caption {
   color: white;
   font-weight: bold;
   font-style: oblique;
   text-shadow: 1px 1px 2px black;
 }
+
 .table_1 th:nth-child(2), .table_1 td:nth-child(2) {
   color: navy;
 }
+
 .table_1 th {
   text-align: left;
 }
+
 .table_1 td, .table_1 th {
   padding: 10px;
 }
+
 .table_1 col:nth-child(1) {
   background: #178282;
 }
+
 .table_1 col:nth-child(2) {
   background: #50b4b4;
 }
+
 .table_1 td:nth-child(1) {
   font-weight: bold;
 }
@@ -242,6 +256,7 @@ blockquote {
   margin: 2.5vw auto;
   text-shadow: 1px 1px 2px black;
 }
+
 blockquote a {
   left: 70%;
   width: 100%;
@@ -276,16 +291,39 @@ footer {
     float: left;
     margin-right: -100%;
   }
+
   nav ul {
     padding-left: 15px;
   }
+
   nav ul li {
     display: block;
   }
+
   nav ul li:hover > ul {
     left: 100%;
     top: 16.75%;
     width: 93.5%;
     display: inline;
   }
+
+  blockquote {
+    width: 85%;
+    font-size: 14px;
+    margin: 2.5vw auto;    
+  }
+
+  .mem_text,
+  .card-image {
+    font-size: 12px;
+  }
+
+  .video-review,
+  .audio-term,
+  .music-player-text,
+  .music_interface,
+  .music_time {
+    font-size: 14px;
+  }
+  
 }

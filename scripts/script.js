@@ -283,3 +283,18 @@ function AgeText(value) {
     else if (value >= 2 && value <= 4) return "года";
     else return "лет";
 }
+
+const nav = document.getElementById('nav');
+
+document.getElementById('menu-button').addEventListener('click', () => {
+    if(nav.style.visibility != 'visible') {
+        nav.style.visibility = 'visible';
+    } else {        
+        nav.style.visibility = 'hidden';
+    }
+});
+
+window.addEventListener('resize', () => {
+    if(document.documentElement.clientWidth < 1000) return;
+    nav.style.visibility = 'visible';
+  });

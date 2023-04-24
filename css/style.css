@@ -132,6 +132,13 @@ nav ul ul li {
   display: list-item;
 }
 
+#menu {
+  top: -40px;
+  float: left;
+  display: none;
+  position: relative;
+}
+
 figure, .center {
   text-align: center;
 }
@@ -287,9 +294,14 @@ footer {
 }
 
 @media screen and (max-width: 1000px) {
+  #menu {
+    display: block;
+  }
   nav {
-    float: left;
+    top: 109px;
+    position: absolute;
     margin-right: -100%;
+    visibility: hidden;
   }
 
   nav ul {

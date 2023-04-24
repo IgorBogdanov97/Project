@@ -309,7 +309,7 @@ footer {
 
   blockquote {
     width: 85%;
-    font-size: 20px; /*+6*/
+    font-size: 20px;
     margin: 2.5vw auto;    
   }
 
@@ -326,9 +326,9 @@ footer {
   }
 
   #music_time {
-    font-size: 10px;
+    font-size: 8px;
   }
   address, footer {
-    font-size: 14px;
+    font-size: 8px;
   }
 }

@@ -325,12 +325,12 @@ footer {
     font-size: 14px;
   }
 
-  #music_time {
-    top: -68px;
-    position: relative;
+ .music_time_header {
+    top: 5px;
     font-size: 8px;
-    
+    position: relative;
   }
+
   address, footer {
     font-size: 8px;
   }

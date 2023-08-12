@@ -284,17 +284,24 @@ function AgeText(value) {
     else return "лет";
 }
 
-const nav = document.getElementById('nav');
-
 document.getElementById('menu-button').addEventListener('click', () => {
-    if(nav.style.visibility != 'visible') {
+    const nav = document.getElementById('nav');
+    if(nav.style.visibility == "" || nav.style.visibility != 'visible') {
         nav.style.visibility = 'visible';
-    } else {        
+    }
+    else {        
         nav.style.visibility = 'hidden';
     }
 });
 
 window.addEventListener('resize', () => {
-    if(document.documentElement.clientWidth < 1000) return;
-    nav.style.visibility = 'visible';
+    const nav = document.getElementById('nav');
+    const menu_Button = document.getElementById('menu-button');
+    if(document.documentElement.clientWidth < 1000) {
+        nav.style.visibility = 'hidden';
+        menu_Button.style.visibility = 'visible';
+    } else {
+        nav.style.visibility = 'visible';
+        menu_Button.style.visibility = 'hidden';
+    }
   });
